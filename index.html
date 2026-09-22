@@ -1,160 +1,135 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Captain Match — Gizlilik Politikası / Privacy Policy</title>
+<title>Captain Match — Privacy Policy</title>
+<meta name="description" content="Privacy policy of Captain Match, a mobile puzzle game by Mehmet Ucar. Available in 14 languages.">
+<link rel="alternate" hreflang="x-default" href="https://mehmetuar.github.io/captainmatch-privacy/">
+<link rel="alternate" hreflang="en" href="https://mehmetuar.github.io/captainmatch-privacy/">
+<link rel="alternate" hreflang="tr" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=tr">
+<link rel="alternate" hreflang="de" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=de">
+<link rel="alternate" hreflang="es" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=es">
+<link rel="alternate" hreflang="fr" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=fr">
+<link rel="alternate" hreflang="it" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=it">
+<link rel="alternate" hreflang="pt" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=pt">
+<link rel="alternate" hreflang="ru" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=ru">
+<link rel="alternate" hreflang="ja" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=ja">
+<link rel="alternate" hreflang="ko" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=ko">
+<link rel="alternate" hreflang="zh-Hans" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=zh-Hans">
+<link rel="alternate" hreflang="zh-Hant" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=zh-Hant">
+<link rel="alternate" hreflang="id" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=id">
+<link rel="alternate" hreflang="ar" href="https://mehmetuar.github.io/captainmatch-privacy/?lang=ar">
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #1f2933; background: #fff;
+  :root {
+    color-scheme: light dark;
+    --fg: #1f2933; --bg: #fff; --line: rgba(128,128,128,.3); --link: #2563eb;
+    --menu-bg: #fff; --hover: rgba(37,99,235,.08); --shadow: 0 10px 30px rgba(15,23,42,.18);
   }
-  @media (prefers-color-scheme: dark) { body { color: #e6e8eb; background: #14181d; } }
-  h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #e6e8eb; --bg: #14181d; --link: #7aa7ff;
+      --menu-bg: #1c2229; --hover: rgba(122,167,255,.12); --shadow: 0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0; color: var(--fg); background: var(--bg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--link); }
+
+  /* Üst çubuk + dil seçici */
+  .bar {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .bar-in {
+    max-width: 46rem; margin: 0 auto; padding: .5rem 1rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .brand { font-weight: 600; white-space: nowrap; }
+  .lang { position: relative; }
+  .lang-btn {
+    display: inline-flex; align-items: center; gap: .5rem; min-height: 2.5rem;
+    padding: .35rem .8rem .35rem .55rem; border: 1px solid var(--line); border-radius: 999px;
+    font: inherit; font-size: .95rem; color: inherit; background: transparent; cursor: pointer;
+  }
+  .lang-btn:hover, .lang-btn[aria-expanded="true"] { background: var(--hover); }
+  .lang-btn:focus-visible, .lang-menu a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .chev { width: .75rem; height: .75rem; flex: none; transition: transform .15s; }
+  .lang-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .flag {
+    width: 1.5rem; height: 1.125rem; flex: none; border-radius: 3px; object-fit: cover;
+    box-shadow: 0 0 0 1px rgba(128,128,128,.35);
+  }
+  .lang-menu {
+    position: absolute; top: calc(100% + .4rem); inset-inline-end: 0;
+    margin: 0; padding: .35rem; list-style: none;
+    display: grid; grid-template-columns: repeat(2, minmax(11rem, 1fr)); gap: 2px;
+    max-height: calc(100vh - 5rem); overflow-y: auto;
+    background: var(--menu-bg); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow);
+  }
+  .lang-menu li { margin: 0; }
+  .lang-menu a {
+    display: flex; align-items: center; gap: .6rem; padding: .5rem .65rem; border-radius: 8px;
+    color: inherit; text-decoration: none; white-space: nowrap;
+  }
+  .lang-menu a:hover { background: var(--hover); }
+  .lang-menu a[aria-current="true"] { font-weight: 600; background: var(--hover); }
+  @media (max-width: 30rem) {
+    .lang-menu { grid-template-columns: 1fr; width: min(16rem, calc(100vw - 2rem)); }
+  }
+
+  /* Politika metni */
+  main { max-width: 46rem; margin: 0 auto; padding: 2rem 1rem 4rem; overflow-wrap: break-word; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 .25rem; }
   h2 { font-size: 1.2rem; margin: 2.25rem 0 .5rem; }
   h3 { font-size: 1rem; margin: 1.5rem 0 .35rem; }
   .sub { opacity: .7; margin: 0 0 2rem; font-size: .95rem; }
-  hr { border: 0; border-top: 1px solid rgba(128,128,128,.3); margin: 3rem 0; }
-  ul { padding-left: 1.25rem; }
+  ul { padding-inline-start: 1.25rem; }
   li { margin: .35rem 0; }
-  a { color: #2563eb; }
-  @media (prefers-color-scheme: dark) { a { color: #7aa7ff; } }
-  .note { padding: .85rem 1rem; border-left: 3px solid #2563eb; background: rgba(37,99,235,.07); margin: 1rem 0; }
+  .xnote { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .9rem; opacity: .75; }
 </style>
 </head>
 <body>
 
-<h1>Captain Match — Gizlilik Politikası</h1>
-<p class="sub">Son güncelleme: 19 Eylül 2026</p>
+<header class="bar">
+  <div class="bar-in">
+    <span class="brand">Captain Match</span>
+    <div class="lang">
+      <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+        <img class="flag" id="lang-flag" src="flags/gb.svg" alt="" width="24" height="18">
+        <span id="lang-name">English</span>
+        <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="lang-menu" id="lang-menu" hidden>
+        <li><a href="./" data-lang="en" data-flag="gb" hreflang="en" lang="en" aria-current="true"><img class="flag" src="flags/gb.svg" alt="" width="24" height="18" loading="lazy">English</a></li>
+        <li><a href="?lang=tr" data-lang="tr" data-flag="tr" hreflang="tr" lang="tr"><img class="flag" src="flags/tr.svg" alt="" width="24" height="18" loading="lazy">Türkçe</a></li>
+        <li><a href="?lang=de" data-lang="de" data-flag="de" hreflang="de" lang="de"><img class="flag" src="flags/de.svg" alt="" width="24" height="18" loading="lazy">Deutsch</a></li>
+        <li><a href="?lang=es" data-lang="es" data-flag="es" hreflang="es" lang="es"><img class="flag" src="flags/es.svg" alt="" width="24" height="18" loading="lazy">Español</a></li>
+        <li><a href="?lang=fr" data-lang="fr" data-flag="fr" hreflang="fr" lang="fr"><img class="flag" src="flags/fr.svg" alt="" width="24" height="18" loading="lazy">Français</a></li>
+        <li><a href="?lang=it" data-lang="it" data-flag="it" hreflang="it" lang="it"><img class="flag" src="flags/it.svg" alt="" width="24" height="18" loading="lazy">Italiano</a></li>
+        <li><a href="?lang=pt" data-lang="pt" data-flag="br" hreflang="pt" lang="pt"><img class="flag" src="flags/br.svg" alt="" width="24" height="18" loading="lazy">Português</a></li>
+        <li><a href="?lang=ru" data-lang="ru" data-flag="ru" hreflang="ru" lang="ru"><img class="flag" src="flags/ru.svg" alt="" width="24" height="18" loading="lazy">Русский</a></li>
+        <li><a href="?lang=ja" data-lang="ja" data-flag="jp" hreflang="ja" lang="ja"><img class="flag" src="flags/jp.svg" alt="" width="24" height="18" loading="lazy">日本語</a></li>
+        <li><a href="?lang=ko" data-lang="ko" data-flag="kr" hreflang="ko" lang="ko"><img class="flag" src="flags/kr.svg" alt="" width="24" height="18" loading="lazy">한국어</a></li>
+        <li><a href="?lang=zh-Hans" data-lang="zh-Hans" data-flag="cn" hreflang="zh-Hans" lang="zh-Hans"><img class="flag" src="flags/cn.svg" alt="" width="24" height="18" loading="lazy">简体中文</a></li>
+        <li><a href="?lang=zh-Hant" data-lang="zh-Hant" data-flag="tw" hreflang="zh-Hant" lang="zh-Hant"><img class="flag" src="flags/tw.svg" alt="" width="24" height="18" loading="lazy">繁體中文</a></li>
+        <li><a href="?lang=id" data-lang="id" data-flag="id" hreflang="id" lang="id"><img class="flag" src="flags/id.svg" alt="" width="24" height="18" loading="lazy">Bahasa Indonesia</a></li>
+        <li><a href="?lang=ar" data-lang="ar" data-flag="sa" hreflang="ar" lang="ar"><img class="flag" src="flags/sa.svg" alt="" width="24" height="18" loading="lazy"><bdi>العربية</bdi></a></li>
+      </ul>
+    </div>
+  </div>
+</header>
 
-<p>Captain Match, <strong>Mehmet Ucar</strong> tarafından geliştirilen bir mobil bulmaca oyunudur.
-Bu sayfa, oyunun hangi verileri işlediğini açıklar. Özet: <strong>oyun sizden ad, e-posta gibi kişisel
-bilgiler istemez, hesap açmanızı gerektirmez ve ilerlemenizi kendi sunucularımıza göndermez.</strong>
-Oyun ücretsiz olduğu için reklam gösterir; reklamları sunan <strong>Google</strong>, bu amaçla cihazınızın
-reklam kimliğini ve bazı teknik verileri işler. Ayrıntılar 4. bölümde.</p>
+<main>
+<!-- Metin değişirse 14 makalenin hepsini birlikte güncelle; "Last updated" tarihi de 14'ünde değişir. İngilizce esastır. -->
 
-<h2>1. Topladığımız kişisel veriler</h2>
-<p><strong>Geliştirici olarak biz sizden hiçbir kişisel veri toplamıyoruz.</strong> Oyun; ad, e-posta,
-telefon numarası, tam konum, rehber veya benzeri bir kişisel veri istemez. Kayıt olma veya giriş yapma
-yoktur. Bize ulaşan bir kullanıcı kaydı, sunucumuzda tutulan bir profil yoktur.</p>
-<p>Bunun tek istisnası reklamlardır: reklam sağlayıcımız Google, reklamları sunabilmek için
-aşağıda açıklanan verileri <strong>doğrudan kendisi</strong> işler. Bu veriler bize iletilmez.</p>
-
-<h2>2. Cihazınızda saklanan veriler</h2>
-<p>Oyun ilerlemeniz (tamamlanan bölümler, altın, booster sayıları ve ayarlar) yalnızca
-<strong>cihazınızın kendi depolama alanında</strong> bir dosyada tutulur. Bu veri bize veya üçüncü
-taraflara gönderilmez. Uygulamayı silerseniz bu veri de silinir.</p>
-
-<h2>3. Satın almalar</h2>
-<p>Oyun içi satın almalar tamamen <strong>Google Play</strong> (Android) ve <strong>Apple App Store</strong>
-(iOS) üzerinden yürütülür. Ödeme bilgileriniz (kart numarası vb.) bize hiçbir zaman ulaşmaz; bu bilgileri
-görmeyiz ve saklamayız.</p>
-<p>Bir satın alma tamamlandığında, mağazanın verdiği <strong>işlem kimliğini</strong> cihazınızda
-saklarız. Bunun tek amacı, aynı satın almanın yanlışlıkla iki kez teslim edilmesini önlemektir. Bu
-kimlik kişisel bir veri değildir ve cihazdan dışarı çıkmaz.</p>
-<p>Satın alma altyapısı için <strong>Unity Technologies</strong>'in "Unity In-App Purchasing" hizmeti
-kullanılır. Bu hizmet, mağazalarla iletişim kurmak için teknik ve cihaz verileri işleyebilir. Ayrıntılar:
-<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity Gizlilik Politikası</a>.
-Ayrıca <a href="https://policies.google.com/privacy" rel="noopener">Google Gizlilik Politikası</a> ve
-<a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Gizlilik Politikası</a> geçerlidir.</p>
-
-<h2>4. Reklamlar</h2>
-<p>Oyun ücretsiz kalabilmek için <strong>Google AdMob</strong> aracılığıyla reklam gösterir. İki tür
-reklam vardır:</p>
-<ul>
-  <li><strong>Ödüllü reklamlar</strong> — yalnızca siz izlemeyi seçtiğinizde açılır (örneğin "Reklam
-  izle ×2 ganimet" veya mağazadaki "Ücretsiz Coin"). İzlemezseniz hiçbir şey kaybetmezsiniz.</li>
-  <li><strong>Geçiş reklamları</strong> — belirli bölümleri tamamladıktan sonra, bölüm sonunda tam
-  ekran gösterilir. Oyunun ortasında reklam çıkmaz.</li>
-</ul>
-
-<h3>Reklamlar için işlenen veriler</h3>
-<p>Reklamları sunmak, tekrarı önlemek, dolandırıcılığa karşı korumak ve performanslarını ölçmek için
-Google şunları işleyebilir:</p>
-<ul>
-  <li><strong>Reklam kimliği</strong> — Android'de "Reklam Kimliği" (AAID), iOS'ta "Reklam
-  Tanımlayıcısı" (IDFA). Bu, sıfırlayabileceğiniz, adınıza bağlı olmayan bir numaradır.</li>
-  <li>IP adresi ve bundan çıkarılan <strong>yaklaşık konum</strong> (ülke/şehir düzeyi; GPS konumu değil)</li>
-  <li>Cihaz modeli, işletim sistemi sürümü, dil ve benzeri teknik bilgiler</li>
-  <li>Reklamla etkileşiminiz (gösterildi, izlendi, tıklandı)</li>
-</ul>
-<p>Bu veriler <strong>doğrudan Google'a</strong> gider. Biz ne toplarız, ne görürüz, ne saklarız; bize
-yalnızca kişi bazlı olmayan toplu gelir raporları ulaşır. Google'ın bu verileri nasıl kullandığı:
-<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Google'ın iş ortağı sitelerinden veri kullanımı</a>
-ve <a href="https://policies.google.com/privacy" rel="noopener">Google Gizlilik Politikası</a>.</p>
-
-<h3>Rızanız ve seçimleriniz</h3>
-<p><strong>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara</strong> oyunu ilk
-açtıklarında bir rıza ekranı gösterilir ve kişiselleştirilmiş reklamları kabul edip etmedikleri sorulur.
-Bu tercihinizi daha sonra oyun içinde <strong>Ayarlar &rsaquo; Gizlilik seçenekleri</strong>'nden
-değiştirebilirsiniz.</p>
-<p>Kişiselleştirmeyi reddederseniz reklamlar gösterilmeye devam eder, ancak ilgi alanlarınıza göre
-seçilmez. Reklam kimliğinizi her zaman cihaz ayarlarından sıfırlayabilir veya silebilirsiniz:</p>
-<ul>
-  <li><strong>Android:</strong> Ayarlar &rsaquo; Google &rsaquo; Tüm hizmetler &rsaquo; Reklamlar</li>
-  <li><strong>iOS:</strong> Ayarlar &rsaquo; Gizlilik ve Güvenlik &rsaquo; İzleme. iOS'ta uygulama
-  ayrıca izleme izni ister; reddederseniz reklamlar kişiselleştirilmez.</li>
-</ul>
-
-<h3>"Reklamsız" satın alması</h3>
-<p>Mağazadaki <strong>Reklamsız</strong> ürününü satın alırsanız bölüm sonundaki geçiş reklamları
-kalkar. <strong>Ödüllü reklamlar kalmaya devam eder</strong> — çünkü onları yalnızca siz isteyerek
-izliyorsunuz ve karşılığında altın kazanıyorsunuz; kaldırmak sizi bu kazançtan mahrum bırakırdı.</p>
-
-<h2>5. Kurulum ölçümü, analitik ve çökme raporları</h2>
-<p>Oyunun oynanışınızı izleyen bir analitik sistemi ve çökme raporlaması <strong>yoktur</strong>: hangi
-bölümü ne kadar oynadığınızı takip etmiyoruz. Google AdMob yalnızca kendi reklamlarının performansını
-ölçer (4. bölüm).</p>
-<p>Oyunu hangi reklam ya da mağaza sayfası üzerinden yüklediğinizi anlamak ve reklam gelirini toplu olarak
-ölçmek için <strong>Tenjin</strong> adlı ölçüm hizmetini kullanıyoruz. Tenjin şu verileri işleyebilir:</p>
-<ul>
-  <li><strong>Reklam kimliğiniz</strong> (Android'de AAID; iOS'ta yalnızca izleme iznini verdiyseniz IDFA) ve
-  iOS'ta satıcı kimliği (IDFV)</li>
-  <li>IP adresiniz ve ondan türetilen ülke bilgisi</li>
-  <li>Cihaz modeli, işletim sistemi sürümü, dil ve saat dilimi</li>
-  <li>Yükleme kaynağı (Google Play yükleme yönlendiricisi / Apple SKAdNetwork) ve uygulamanın açılma zamanları</li>
-  <li>Gösterilen reklamların gelir değeri (kişiye değil, reklama ait)</li>
-</ul>
-<p>Adınız, e-postanız, konumunuz (GPS) ya da oyun içi davranışınız Tenjin'e <strong>gönderilmez</strong>.
-Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de rıza ekranında cihazda bilgi depolamaya izin
-vermezseniz Tenjin'e <strong>hiçbir veri gönderilmez</strong>. Tenjin'in gizlilik politikası:
-<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
-
-<h2>6. Üçüncü taraflarla paylaşım</h2>
-<p>Verilerinizi satmıyor, kiralamıyoruz. Oyunla ilgili veri işleyen üçüncü taraflar şunlardır:</p>
-<ul>
-  <li><strong>Google (AdMob)</strong> — reklam sunumu; 4. bölümdeki veriler</li>
-  <li><strong>Google Play / Apple App Store</strong> — satın alma işlemleri ve ödeme</li>
-  <li><strong>Unity Technologies</strong> — satın alma altyapısı</li>
-  <li><strong>Tenjin</strong> — kurulum kaynağı ve reklam geliri ölçümü; 5. bölümdeki veriler</li>
-</ul>
-
-<h2>7. Çocuklar</h2>
-<p>Oyun özellikle çocuklara yönelik değildir; <strong>13 yaş ve üzeri</strong> genel kitleye hitap eder.
-Bilerek 13 yaşın altındaki kullanıcılardan veri toplamayız ve oyunu çocuklara yönelik olarak
-pazarlamayız. Çocuğunuzun oyunu kullandığını düşünüyor ve veri işlendiğinden endişeleniyorsanız
-aşağıdaki adresten bize ulaşın.</p>
-
-<h2>8. Haklarınız</h2>
-<p>Sizi tanımlayan bir kaydı biz tutmadığımız için bizde silinecek, düzeltilecek veya taşınacak bir
-veriniz bulunmaz. Cihazınızdaki oyun ilerlemesini silmek isterseniz uygulamayı kaldırmanız yeterlidir.
-Reklam verileriniz için haklarınızı, veri sorumlusu olan
-<a href="https://policies.google.com/privacy" rel="noopener">Google</a> nezdinde kullanabilir; reklam
-kimliğinizi yukarıda anlatıldığı gibi sıfırlayabilirsiniz.</p>
-
-<h2>9. Değişiklikler</h2>
-<p>Bu politika değişirse sayfanın en üstündeki tarih güncellenir. Önemli değişiklikler oyun
-içinde de duyurulur.</p>
-
-<h2>10. İletişim</h2>
-<p>Sorularınız için: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
-
-<hr>
-
+<article data-lang="en" lang="en">
 <h1>Captain Match — Privacy Policy</h1>
-<p class="sub">Last updated: 19 September 2026</p>
+<p class="sub">Last updated: 22 September 2026</p>
 
 <p>Captain Match is a mobile puzzle game developed by <strong>Mehmet Ucar</strong>. This page explains
 what data the game processes. In short: <strong>the game does not ask for personal details such as your
@@ -213,7 +188,7 @@ and the <a href="https://policies.google.com/privacy" rel="noopener">Google Priv
 <h3>Your consent and choices</h3>
 <p>Users in the <strong>European Economic Area, the United Kingdom and Switzerland</strong> are shown a
 consent screen the first time they open the game, asking whether they accept personalised advertising.
-You can change that choice later in the game under <strong>Settings &rsaquo; Privacy options</strong>.</p>
+You can change that choice later in the game under <strong>Settings &rsaquo; Privacy Options</strong>.</p>
 <p>If you decline personalisation, ads are still shown but are not selected based on your interests.
 You can reset or delete your advertising identifier at any time in your device settings:</p>
 <ul>
@@ -272,6 +247,1652 @@ also be announced in the game.</p>
 
 <h2>10. Contact</h2>
 <p>Questions: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+</article>
 
+<article data-lang="tr" lang="tr" hidden>
+<h1>Captain Match — Gizlilik Politikası</h1>
+<p class="sub">Son güncelleme: 22 Eylül 2026</p>
+
+<p>Captain Match, <strong>Mehmet Ucar</strong> tarafından geliştirilen bir mobil bulmaca oyunudur.
+Bu sayfa, oyunun hangi verileri işlediğini açıklar. Özet: <strong>oyun sizden ad, e-posta gibi kişisel
+bilgiler istemez, hesap açmanızı gerektirmez ve ilerlemenizi kendi sunucularımıza göndermez.</strong>
+Oyun ücretsiz olduğu için reklam gösterir; reklamları sunan <strong>Google</strong>, bu amaçla cihazınızın
+reklam kimliğini ve bazı teknik verileri işler. Ayrıntılar 4. bölümde.</p>
+
+<h2>1. Topladığımız kişisel veriler</h2>
+<p><strong>Geliştirici olarak biz sizden hiçbir kişisel veri toplamıyoruz.</strong> Oyun; ad, e-posta,
+telefon numarası, tam konum, rehber veya benzeri bir kişisel veri istemez. Kayıt olma veya giriş yapma
+yoktur. Bize ulaşan bir kullanıcı kaydı, sunucumuzda tutulan bir profil yoktur.</p>
+<p>Bunun tek istisnası reklamlardır: reklam sağlayıcımız Google, reklamları sunabilmek için
+aşağıda açıklanan verileri <strong>doğrudan kendisi</strong> işler. Bu veriler bize iletilmez.</p>
+
+<h2>2. Cihazınızda saklanan veriler</h2>
+<p>Oyun ilerlemeniz (tamamlanan bölümler, altın, booster sayıları ve ayarlar) yalnızca
+<strong>cihazınızın kendi depolama alanında</strong> bir dosyada tutulur. Bu veri bize veya üçüncü
+taraflara gönderilmez. Uygulamayı silerseniz bu veri de silinir.</p>
+
+<h2>3. Satın almalar</h2>
+<p>Oyun içi satın almalar tamamen <strong>Google Play</strong> (Android) ve <strong>Apple App Store</strong>
+(iOS) üzerinden yürütülür. Ödeme bilgileriniz (kart numarası vb.) bize hiçbir zaman ulaşmaz; bu bilgileri
+görmeyiz ve saklamayız.</p>
+<p>Bir satın alma tamamlandığında, mağazanın verdiği <strong>işlem kimliğini</strong> cihazınızda
+saklarız. Bunun tek amacı, aynı satın almanın yanlışlıkla iki kez teslim edilmesini önlemektir. Bu
+kimlik kişisel bir veri değildir ve cihazdan dışarı çıkmaz.</p>
+<p>Satın alma altyapısı için <strong>Unity Technologies</strong>'in "Unity In-App Purchasing" hizmeti
+kullanılır. Bu hizmet, mağazalarla iletişim kurmak için teknik ve cihaz verileri işleyebilir. Ayrıntılar:
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity Gizlilik Politikası</a>.
+Ayrıca <a href="https://policies.google.com/privacy?hl=tr" rel="noopener">Google Gizlilik Politikası</a> ve
+<a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Gizlilik Politikası</a> geçerlidir.</p>
+
+<h2>4. Reklamlar</h2>
+<p>Oyun ücretsiz kalabilmek için <strong>Google AdMob</strong> aracılığıyla reklam gösterir. İki tür
+reklam vardır:</p>
+<ul>
+  <li><strong>Ödüllü reklamlar</strong> — yalnızca siz izlemeyi seçtiğinizde açılır (örneğin "Reklam
+  izle, ×2 ganimet" veya mağazadaki "Ücretsiz Coin"). İzlemezseniz hiçbir şey kaybetmezsiniz.</li>
+  <li><strong>Geçiş reklamları</strong> — belirli bölümleri tamamladıktan sonra, bölüm sonunda tam
+  ekran gösterilir. Oyunun ortasında reklam çıkmaz.</li>
+</ul>
+
+<h3>Reklamlar için işlenen veriler</h3>
+<p>Reklamları sunmak, tekrarı önlemek, dolandırıcılığa karşı korumak ve performanslarını ölçmek için
+Google şunları işleyebilir:</p>
+<ul>
+  <li><strong>Reklam kimliği</strong> — Android'de "Reklam Kimliği" (AAID), iOS'ta "Reklam
+  Tanımlayıcısı" (IDFA). Bu, sıfırlayabileceğiniz, adınıza bağlı olmayan bir numaradır.</li>
+  <li>IP adresi ve bundan çıkarılan <strong>yaklaşık konum</strong> (ülke/şehir düzeyi; GPS konumu değil)</li>
+  <li>Cihaz modeli, işletim sistemi sürümü, dil ve benzeri teknik bilgiler</li>
+  <li>Reklamla etkileşiminiz (gösterildi, izlendi, tıklandı)</li>
+</ul>
+<p>Bu veriler <strong>doğrudan Google'a</strong> gider. Biz ne toplarız, ne görürüz, ne saklarız; bize
+yalnızca kişi bazlı olmayan toplu gelir raporları ulaşır. Google'ın bu verileri nasıl kullandığı:
+<a href="https://policies.google.com/technologies/partner-sites?hl=tr" rel="noopener">Google'ın, hizmetlerini kullanan site ve uygulamalardan gelen bilgileri nasıl kullandığı</a>
+ve <a href="https://policies.google.com/privacy?hl=tr" rel="noopener">Google Gizlilik Politikası</a>.</p>
+
+<h3>Rızanız ve seçimleriniz</h3>
+<p><strong>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara</strong> oyunu ilk
+açtıklarında bir rıza ekranı gösterilir ve kişiselleştirilmiş reklamları kabul edip etmedikleri sorulur.
+Bu tercihinizi daha sonra oyun içinde <strong>Ayarlar &rsaquo; Gizlilik Seçenekleri</strong>'nden
+değiştirebilirsiniz.</p>
+<p>Kişiselleştirmeyi reddederseniz reklamlar gösterilmeye devam eder, ancak ilgi alanlarınıza göre
+seçilmez. Reklam kimliğinizi her zaman cihaz ayarlarından sıfırlayabilir veya silebilirsiniz:</p>
+<ul>
+  <li><strong>Android:</strong> Ayarlar &rsaquo; Google &rsaquo; Tüm hizmetler &rsaquo; Reklamlar</li>
+  <li><strong>iOS:</strong> Ayarlar &rsaquo; Gizlilik ve Güvenlik &rsaquo; Takip. iOS'ta uygulama
+  ayrıca takip izni ister; reddederseniz reklamlar kişiselleştirilmez.</li>
+</ul>
+
+<h3>"Reklamsız" satın alması</h3>
+<p>Mağazadaki <strong>Reklamsız</strong> ürününü satın alırsanız bölüm sonundaki geçiş reklamları
+kalkar. <strong>Ödüllü reklamlar kalmaya devam eder</strong> — çünkü onları yalnızca siz isteyerek
+izliyorsunuz ve karşılığında altın kazanıyorsunuz; kaldırmak sizi bu kazançtan mahrum bırakırdı.</p>
+
+<h2>5. Kurulum ölçümü, analitik ve çökme raporları</h2>
+<p>Oyunun oynanışınızı izleyen bir analitik sistemi ve çökme raporlaması <strong>yoktur</strong>: hangi
+bölümü ne kadar oynadığınızı takip etmiyoruz. Google AdMob yalnızca kendi reklamlarının performansını
+ölçer (4. bölüm).</p>
+<p>Oyunu hangi reklam ya da mağaza sayfası üzerinden yüklediğinizi anlamak ve reklam gelirini toplu olarak
+ölçmek için <strong>Tenjin</strong> adlı ölçüm hizmetini kullanıyoruz. Tenjin şu verileri işleyebilir:</p>
+<ul>
+  <li><strong>Reklam kimliğiniz</strong> (Android'de AAID; iOS'ta yalnızca takip iznini verdiyseniz IDFA) ve
+  iOS'ta satıcı kimliği (IDFV)</li>
+  <li>IP adresiniz ve ondan türetilen ülke bilgisi</li>
+  <li>Cihaz modeli, işletim sistemi sürümü, dil ve saat dilimi</li>
+  <li>Yükleme kaynağı (Google Play yükleme yönlendiricisi / Apple SKAdNetwork) ve uygulamanın açılma zamanları</li>
+  <li>Gösterilen reklamların gelir değeri (kişiye değil, reklama ait)</li>
+</ul>
+<p>Adınız, e-postanız, konumunuz (GPS) ya da oyun içi davranışınız Tenjin'e <strong>gönderilmez</strong>.
+Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de rıza ekranında cihazda bilgi depolamaya izin
+vermezseniz Tenjin'e <strong>hiçbir veri gönderilmez</strong>. Tenjin'in gizlilik politikası:
+<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Üçüncü taraflarla paylaşım</h2>
+<p>Verilerinizi satmıyor, kiralamıyoruz. Oyunla ilgili veri işleyen üçüncü taraflar şunlardır:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — reklam sunumu; 4. bölümdeki veriler</li>
+  <li><strong>Google Play / Apple App Store</strong> — satın alma işlemleri ve ödeme</li>
+  <li><strong>Unity Technologies</strong> — satın alma altyapısı</li>
+  <li><strong>Tenjin</strong> — kurulum kaynağı ve reklam geliri ölçümü; 5. bölümdeki veriler</li>
+</ul>
+
+<h2>7. Çocuklar</h2>
+<p>Oyun özellikle çocuklara yönelik değildir; <strong>13 yaş ve üzeri</strong> genel kitleye hitap eder.
+Bilerek 13 yaşın altındaki kullanıcılardan veri toplamayız ve oyunu çocuklara yönelik olarak
+pazarlamayız. Çocuğunuzun oyunu kullandığını düşünüyor ve veri işlendiğinden endişeleniyorsanız
+aşağıdaki adresten bize ulaşın.</p>
+
+<h2>8. Haklarınız</h2>
+<p>Sizi tanımlayan bir kaydı biz tutmadığımız için bizde silinecek, düzeltilecek veya taşınacak bir
+veriniz bulunmaz. Cihazınızdaki oyun ilerlemesini silmek isterseniz uygulamayı kaldırmanız yeterlidir.
+Reklam verileriniz için haklarınızı, veri sorumlusu olan
+<a href="https://policies.google.com/privacy?hl=tr" rel="noopener">Google</a> nezdinde kullanabilir; reklam
+kimliğinizi yukarıda anlatıldığı gibi sıfırlayabilirsiniz.</p>
+
+<h2>9. Değişiklikler</h2>
+<p>Bu politika değişirse sayfanın en üstündeki tarih güncellenir. Önemli değişiklikler oyun
+içinde de duyurulur.</p>
+
+<h2>10. İletişim</h2>
+<p>Sorularınız için: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Bu metin İngilizce aslından çevrilmiştir. İki sürüm arasında bir fark olursa İngilizce sürüm esas alınır.</p>
+</article>
+
+<article data-lang="de" lang="de" hidden>
+<h1>Captain Match — Datenschutzerklärung</h1>
+<p class="sub">Zuletzt aktualisiert: 22. September 2026</p>
+
+<p>Captain Match ist ein mobiles Puzzlespiel, entwickelt von <strong>Mehmet Ucar</strong>. Diese Seite
+erklärt, welche Daten das Spiel verarbeitet. Kurz gesagt: <strong>Das Spiel fragt nicht nach persönlichen
+Angaben wie deinem Namen oder deiner E-Mail-Adresse, benötigt kein Konto und sendet deinen Spielfortschritt
+nie an unsere Server.</strong> Da das Spiel kostenlos ist, zeigt es Werbung; <strong>Google</strong>, das
+diese Werbung ausliefert, verarbeitet dafür die Werbe-ID deines Geräts und bestimmte technische Daten.
+Siehe Abschnitt 4.</p>
+
+<h2>1. Personenbezogene Daten, die wir erheben</h2>
+<p><strong>Als Entwickler erheben wir keine personenbezogenen Daten von dir.</strong> Das Spiel fragt weder
+nach deinem Namen, deiner E-Mail-Adresse, Telefonnummer, deinem genauen Standort und deinen Kontakten noch
+nach ähnlichen personenbezogenen Daten. Es gibt keine Registrierung und keine Anmeldung, und wir führen auf
+keinem unserer Server ein Nutzerprofil.</p>
+<p>Die einzige Ausnahme ist Werbung: Unser Werbeanbieter Google verarbeitet die unten beschriebenen Daten
+<strong>direkt</strong>, um Werbung auszuliefern. Diese Daten werden nicht an uns weitergegeben.</p>
+
+<h2>2. Auf deinem Gerät gespeicherte Daten</h2>
+<p>Dein Spielfortschritt (abgeschlossene Level, Münzen, Anzahl der Booster und Einstellungen) wird in einer
+Datei <strong>ausschließlich auf deinem eigenen Gerät</strong> gespeichert. Er wird weder an uns noch an
+Dritte gesendet. Wenn du die App löschst, werden auch diese Daten gelöscht.</p>
+
+<h2>3. Käufe</h2>
+<p>In-App-Käufe werden vollständig über <strong>Google Play</strong> (Android) und den
+<strong>Apple App Store</strong> (iOS) abgewickelt. Deine Zahlungsdaten erreichen uns nie; wir sehen sie
+nicht und speichern sie nicht.</p>
+<p>Nach Abschluss eines Kaufs speichern wir die vom Store vergebene <strong>Transaktions-ID</strong> auf
+deinem Gerät. Sie dient einzig dazu, zu verhindern, dass derselbe Kauf zweimal ausgeliefert wird. Sie ist
+kein personenbezogenes Datum und verlässt das Gerät nie.</p>
+<p>Käufe werden mit dem Dienst „Unity In-App Purchasing“ von <strong>Unity Technologies</strong> umgesetzt,
+der technische Daten und Gerätedaten verarbeiten kann, um mit den Stores zu kommunizieren. Siehe die
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Datenschutzerklärung von Unity</a>.
+Außerdem gelten die <a href="https://policies.google.com/privacy?hl=de" rel="noopener">Datenschutzerklärung von Google</a>
+und die <a href="https://www.apple.com/legal/privacy/" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
+
+<h2>4. Werbung</h2>
+<p>Damit das Spiel kostenlos bleibt, zeigt es Werbung über <strong>Google AdMob</strong>. Es gibt zwei Arten:</p>
+<ul>
+  <li><strong>Werbung mit Belohnung</strong> — wird nur angezeigt, wenn du dich dafür entscheidest, sie
+  anzusehen (zum Beispiel „Werbung ansehen für x2 Beute“ oder „Gratis-Münzen“ im Shop). Wenn du sie
+  auslässt, entgeht dir nichts.</li>
+  <li><strong>Interstitial-Werbung</strong> — Vollbildwerbung, die nach bestimmten abgeschlossenen Leveln
+  am Levelende gezeigt wird. Keine Werbung unterbricht jemals das Spielen.</li>
+</ul>
+
+<h3>Für Werbung verarbeitete Daten</h3>
+<p>Um Werbung auszuliefern, Wiederholungen zu begrenzen, vor Betrug zu schützen und die Leistung zu
+messen, kann Google Folgendes verarbeiten:</p>
+<ul>
+  <li>Deine <strong>Werbe-ID</strong> — die Werbe-ID (AAID) unter Android bzw. den Identifier for
+  Advertisers (IDFA) unter iOS. Das ist eine zurücksetzbare Nummer, die nicht mit deinem Namen verknüpft ist.</li>
+  <li>Deine IP-Adresse und der daraus abgeleitete <strong>ungefähre Standort</strong> (Land/Stadt, kein
+  GPS-Standort)</li>
+  <li>Gerätemodell, Betriebssystemversion, Sprache und ähnliche technische Informationen</li>
+  <li>Deine Interaktion mit der Werbung (angezeigt, angesehen, angeklickt)</li>
+</ul>
+<p>Diese Daten gehen <strong>direkt an Google</strong>. Wir erheben, sehen und speichern sie nicht; wir
+erhalten nur zusammengefasste, nicht personenbezogene Umsatzberichte. Wie Google diese Daten verwendet,
+erfährst du unter
+<a href="https://policies.google.com/technologies/partner-sites?hl=de" rel="noopener">Wie Google Daten von Websites oder Apps verwendet, die Google-Dienste nutzen</a>
+und in der <a href="https://policies.google.com/privacy?hl=de" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+
+<h3>Deine Einwilligung und Wahlmöglichkeiten</h3>
+<p>Nutzern im <strong>Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz</strong>
+wird beim ersten Öffnen des Spiels ein Einwilligungsbildschirm angezeigt, auf dem sie gefragt werden, ob sie
+personalisierte Werbung akzeptieren. Du kannst diese Entscheidung später im Spiel unter
+<strong>Einstellungen &rsaquo; Datenschutzoptionen</strong> ändern.</p>
+<p>Wenn du die Personalisierung ablehnst, wird weiterhin Werbung angezeigt, aber sie wird nicht nach deinen
+Interessen ausgewählt. Du kannst deine Werbe-ID jederzeit in den Geräteeinstellungen zurücksetzen oder löschen:</p>
+<ul>
+  <li><strong>Android:</strong> Einstellungen &rsaquo; Google &rsaquo; Alle Dienste &rsaquo; Werbung</li>
+  <li><strong>iOS:</strong> Einstellungen &rsaquo; Datenschutz &amp; Sicherheit &rsaquo; Tracking. Unter iOS
+  fragt die App außerdem nach der Erlaubnis zum Tracking; lehnst du ab, wird die Werbung nicht personalisiert.</li>
+</ul>
+
+<h3>Der Kauf „Werbefrei“</h3>
+<p>Wenn du im Shop <strong>Werbefrei</strong> kaufst, entfällt die Interstitial-Werbung am Levelende.
+<strong>Werbung mit Belohnung bleibt verfügbar</strong> — die siehst du dir ohnehin nur freiwillig an und
+verdienst damit Münzen; sie zu entfernen, würde dir diese Belohnung nehmen.</p>
+
+<h2>5. Installationsmessung, Analyse und Absturzberichte</h2>
+<p>Das Spiel hat <strong>keine Spielanalyse und keine Absturzberichte</strong>: Wir verfolgen nicht, welche
+Level du spielst oder wie lange. Google AdMob misst nur die Leistung seiner eigenen Werbung (siehe Abschnitt 4).</p>
+<p>Um zu verstehen, über welche Werbung oder Store-Seite eine Installation zustande kam, und um
+Werbeeinnahmen zusammengefasst zu messen, nutzen wir den Messdienst <strong>Tenjin</strong>. Tenjin kann
+Folgendes verarbeiten:</p>
+<ul>
+  <li>Deine <strong>Werbe-ID</strong> (AAID unter Android; IDFA unter iOS nur, wenn du die Erlaubnis zum
+  Tracking erteilt hast) sowie unter iOS den Identifier for Vendor (IDFV)</li>
+  <li>Deine IP-Adresse und das daraus abgeleitete Land</li>
+  <li>Gerätemodell, Betriebssystemversion, Sprache und Zeitzone</li>
+  <li>Installationsquelle (Google Play Install Referrer / Apple SKAdNetwork) und die Zeitpunkte, zu denen
+  die App geöffnet wird</li>
+  <li>Den Umsatzwert angezeigter Werbung (eine Eigenschaft der Werbung, nicht deiner Person)</li>
+</ul>
+<p>Dein Name, deine E-Mail-Adresse, dein GPS-Standort und dein Verhalten im Spiel werden
+<strong>nicht</strong> an Tenjin gesendet. Wenn du im Europäischen Wirtschaftsraum, im Vereinigten
+Königreich oder in der Schweiz auf dem Einwilligungsbildschirm das Speichern von Informationen auf deinem
+Gerät nicht erlaubst, werden <strong>überhaupt keine Daten an Tenjin gesendet</strong>. Datenschutzerklärung
+von Tenjin: <a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Weitergabe an Dritte</h2>
+<p>Wir verkaufen oder vermieten deine Daten nicht. Folgende Dritte verarbeiten im Zusammenhang mit dem
+Spiel Daten:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — Auslieferung von Werbung; die in Abschnitt 4 genannten Daten</li>
+  <li><strong>Google Play / Apple App Store</strong> — Käufe und Zahlung</li>
+  <li><strong>Unity Technologies</strong> — Kaufinfrastruktur</li>
+  <li><strong>Tenjin</strong> — Messung von Installationsquelle und Werbeeinnahmen; die in Abschnitt 5
+  genannten Daten</li>
+</ul>
+
+<h2>7. Kinder</h2>
+<p>Das Spiel richtet sich nicht an Kinder, sondern an ein allgemeines Publikum <strong>ab 13 Jahren</strong>.
+Wir erheben nicht wissentlich Daten von Nutzern unter 13 Jahren und bewerben das Spiel nicht bei Kindern.
+Wenn du glaubst, dass dein Kind das Spiel nutzt, und du dir Sorgen wegen der Datenverarbeitung machst,
+kontaktiere uns unter der unten genannten Adresse.</p>
+
+<h2>8. Deine Rechte</h2>
+<p>Da wir keinen Datensatz führen, der dich identifiziert, gibt es bei uns nichts zu löschen, zu berichtigen
+oder zu exportieren. Um deinen lokalen Spielfortschritt zu entfernen, deinstalliere einfach die App. Deine
+Rechte in Bezug auf Werbedaten kannst du gegenüber
+<a href="https://policies.google.com/privacy?hl=de" rel="noopener">Google</a> als Verantwortlichem geltend
+machen, und deine Werbe-ID kannst du wie oben beschrieben zurücksetzen.</p>
+
+<h2>9. Änderungen</h2>
+<p>Wenn sich diese Datenschutzerklärung ändert, wird das Datum oben auf der Seite aktualisiert. Wesentliche
+Änderungen werden außerdem im Spiel angekündigt.</p>
+
+<h2>10. Kontakt</h2>
+<p>Fragen: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Dieser Text wurde aus dem Englischen übersetzt. Bei Abweichungen zwischen den Fassungen ist die englische Fassung maßgeblich.</p>
+</article>
+
+<article data-lang="es" lang="es" hidden>
+<h1>Captain Match — Política de privacidad</h1>
+<p class="sub">Última actualización: 22 de septiembre de 2026</p>
+
+<p>Captain Match es un juego de puzles para móviles desarrollado por <strong>Mehmet Ucar</strong>. Esta
+página explica qué datos trata el juego. En resumen: <strong>el juego no te pide datos personales como tu
+nombre o tu correo electrónico, no requiere ninguna cuenta y nunca envía tu progreso a nuestros
+servidores.</strong> Como el juego es gratuito, muestra publicidad; <strong>Google</strong>, que sirve esos
+anuncios, trata para ello el identificador de publicidad de tu dispositivo y ciertos datos técnicos.
+Consulta la sección 4.</p>
+
+<h2>1. Datos personales que recopilamos</h2>
+<p><strong>Como desarrollador, no recopilamos ningún dato personal tuyo.</strong> El juego no solicita tu
+nombre, correo electrónico, número de teléfono, ubicación precisa, contactos ni ningún dato personal similar.
+No hay registro ni inicio de sesión, y no guardamos ningún perfil de usuario en ninguno de nuestros servidores.</p>
+<p>La única excepción es la publicidad: nuestro proveedor de anuncios, Google, trata
+<strong>directamente</strong> los datos descritos a continuación para servir anuncios. Esos datos no se nos
+transmiten.</p>
+
+<h2>2. Datos almacenados en tu dispositivo</h2>
+<p>Tu progreso en el juego (niveles completados, monedas, cantidad de potenciadores y ajustes) se guarda en
+un archivo <strong>únicamente en tu propio dispositivo</strong>. No se envía ni a nosotros ni a terceros.
+Si eliminas la app, estos datos también se eliminan.</p>
+
+<h2>3. Compras</h2>
+<p>Las compras dentro de la app se gestionan íntegramente a través de <strong>Google Play</strong> (Android)
+y el <strong>App Store de Apple</strong> (iOS). Tus datos de pago nunca nos llegan; no los vemos ni los guardamos.</p>
+<p>Cuando se completa una compra, guardamos en tu dispositivo el <strong>identificador de transacción</strong>
+emitido por la tienda. Su único fin es evitar que la misma compra se entregue dos veces. No es un dato
+personal y nunca sale del dispositivo.</p>
+<p>Las compras se implementan con el servicio «Unity In-App Purchasing» de <strong>Unity Technologies</strong>,
+que puede tratar datos técnicos y del dispositivo para comunicarse con las tiendas. Consulta la
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Política de privacidad de Unity</a>.
+También se aplican la <a href="https://policies.google.com/privacy?hl=es" rel="noopener">Política de privacidad de Google</a>
+y la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de privacidad de Apple</a>.</p>
+
+<h2>4. Publicidad</h2>
+<p>Para seguir siendo gratuito, el juego muestra anuncios a través de <strong>Google AdMob</strong>. Hay dos tipos:</p>
+<ul>
+  <li><strong>Anuncios bonificados</strong> — solo se muestran cuando tú decides ver uno (por ejemplo,
+  «Ver un anuncio para conseguir botín x2» o «Monedas gratis» en la tienda). Si no los ves, no pierdes nada.</li>
+  <li><strong>Anuncios intersticiales</strong> — anuncios a pantalla completa que se muestran al final de
+  ciertos niveles, una vez completados. Ningún anuncio interrumpe nunca la partida.</li>
+</ul>
+
+<h3>Datos tratados para la publicidad</h3>
+<p>Para servir anuncios, limitar su repetición, proteger contra el fraude y medir su rendimiento, Google
+puede tratar:</p>
+<ul>
+  <li>Tu <strong>identificador de publicidad</strong>: el ID de publicidad (AAID) en Android o el
+  identificador de publicidad (IDFA) en iOS. Es un número que puedes restablecer y que no está vinculado a
+  tu nombre.</li>
+  <li>Tu dirección IP y la <strong>ubicación aproximada</strong> que se deriva de ella (a nivel de país o
+  ciudad, no la ubicación GPS)</li>
+  <li>Modelo del dispositivo, versión del sistema operativo, idioma e información técnica similar</li>
+  <li>Tu interacción con el anuncio (mostrado, visto, tocado)</li>
+</ul>
+<p>Estos datos van <strong>directamente a Google</strong>. Nosotros no los recopilamos, no los vemos ni los
+guardamos; solo recibimos informes de ingresos agregados y no personales. Para saber cómo usa Google estos
+datos, consulta
+<a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener">Cómo utiliza Google la información de sitios web o aplicaciones que utilizan sus servicios</a>
+y la <a href="https://policies.google.com/privacy?hl=es" rel="noopener">Política de privacidad de Google</a>.</p>
+
+<h3>Tu consentimiento y tus opciones</h3>
+<p>A los usuarios del <strong>Espacio Económico Europeo, el Reino Unido y Suiza</strong> se les muestra una
+pantalla de consentimiento la primera vez que abren el juego, en la que se les pregunta si aceptan la
+publicidad personalizada. Puedes cambiar esa elección más adelante en el juego, en
+<strong>Ajustes &rsaquo; Opciones de privacidad</strong>.</p>
+<p>Si rechazas la personalización, se siguen mostrando anuncios, pero no se eligen según tus intereses.
+Puedes restablecer o eliminar tu identificador de publicidad en cualquier momento desde los ajustes del
+dispositivo:</p>
+<ul>
+  <li><strong>Android:</strong> Ajustes &rsaquo; Google &rsaquo; Todos los servicios &rsaquo; Anuncios</li>
+  <li><strong>iOS:</strong> Ajustes &rsaquo; Privacidad y seguridad &rsaquo; Rastreo. En iOS, la app también
+  te pide permiso de rastreo; si lo rechazas, los anuncios no se personalizan.</li>
+</ul>
+
+<h3>La compra «Sin anuncios»</h3>
+<p>Si compras <strong>Sin anuncios</strong> en la tienda, desaparecen los anuncios intersticiales del final
+de los niveles. <strong>Los anuncios bonificados siguen disponibles</strong>: solo los ves si quieres y te
+hacen ganar monedas, así que quitarlos te privaría de esa recompensa.</p>
+
+<h2>5. Medición de instalaciones, analítica e informes de fallos</h2>
+<p>El juego <strong>no tiene analítica de juego ni informes de fallos</strong>: no hacemos seguimiento de qué
+niveles juegas ni durante cuánto tiempo. Google AdMob solo mide el rendimiento de sus propios anuncios
+(consulta la sección 4).</p>
+<p>Para saber desde qué anuncio o página de la tienda se produjo una instalación, y para medir los ingresos
+publicitarios de forma agregada, usamos un servicio de medición llamado <strong>Tenjin</strong>. Tenjin
+puede tratar:</p>
+<ul>
+  <li>Tu <strong>identificador de publicidad</strong> (AAID en Android; IDFA en iOS solo si has concedido
+  el permiso de rastreo) y, en iOS, el identificador para el proveedor (IDFV)</li>
+  <li>Tu dirección IP y el país que se deriva de ella</li>
+  <li>Modelo del dispositivo, versión del sistema operativo, idioma y zona horaria</li>
+  <li>Origen de la instalación (Google Play Install Referrer / Apple SKAdNetwork) y los momentos en que se
+  abre la app</li>
+  <li>El valor de ingresos de los anuncios mostrados (una propiedad del anuncio, no tuya)</li>
+</ul>
+<p>Tu nombre, tu correo electrónico, tu ubicación GPS y tu comportamiento dentro del juego
+<strong>no</strong> se envían a Tenjin. En el Espacio Económico Europeo, el Reino Unido y Suiza, si en la
+pantalla de consentimiento no permites almacenar información en tu dispositivo, <strong>no se envía ningún
+dato a Tenjin</strong>. Política de privacidad de Tenjin:
+<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Cesión a terceros</h2>
+<p>No vendemos ni alquilamos tus datos. Los terceros que tratan datos en relación con el juego son:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — publicación de anuncios; los datos indicados en la sección 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — compras y pagos</li>
+  <li><strong>Unity Technologies</strong> — infraestructura de compras</li>
+  <li><strong>Tenjin</strong> — medición del origen de las instalaciones y de los ingresos publicitarios;
+  los datos indicados en la sección 5</li>
+</ul>
+
+<h2>7. Menores</h2>
+<p>El juego no está dirigido a niños; está pensado para un público general de <strong>13 años o más</strong>.
+No recopilamos a sabiendas datos de usuarios menores de 13 años ni promocionamos el juego entre niños. Si
+crees que tu hijo o hija usa el juego y te preocupa el tratamiento de datos, escríbenos a la dirección que
+aparece más abajo.</p>
+
+<h2>8. Tus derechos</h2>
+<p>Como no guardamos ningún registro que te identifique, no tenemos nada que borrar, corregir o exportar.
+Para eliminar tu progreso local, basta con desinstalar la app. Respecto a los datos publicitarios, puedes
+ejercer tus derechos ante <a href="https://policies.google.com/privacy?hl=es" rel="noopener">Google</a> como
+responsable del tratamiento, y puedes restablecer tu identificador de publicidad como se explica más arriba.</p>
+
+<h2>9. Cambios</h2>
+<p>Si esta política cambia, se actualizará la fecha que aparece al principio de la página. Los cambios
+importantes también se anunciarán en el juego.</p>
+
+<h2>10. Contacto</h2>
+<p>Preguntas: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Este texto es una traducción del original en inglés. En caso de discrepancia entre ambas versiones, prevalecerá la versión en inglés.</p>
+</article>
+
+<article data-lang="fr" lang="fr" hidden>
+<h1>Captain Match — Politique de confidentialité</h1>
+<p class="sub">Dernière mise à jour&nbsp;: 22 septembre 2026</p>
+
+<p>Captain Match est un jeu de réflexion mobile développé par <strong>Mehmet Ucar</strong>. Cette page
+explique quelles données le jeu traite. En bref&nbsp;: <strong>le jeu ne vous demande aucune information
+personnelle comme votre nom ou votre adresse e-mail, ne nécessite aucun compte et n'envoie jamais votre
+progression à nos serveurs.</strong> Le jeu étant gratuit, il affiche de la publicité&nbsp;;
+<strong>Google</strong>, qui diffuse ces annonces, traite à cette fin l'identifiant publicitaire de votre
+appareil et certaines données techniques. Voir la section 4.</p>
+
+<h2>1. Données personnelles que nous collectons</h2>
+<p><strong>En tant que développeur, nous ne collectons aucune donnée personnelle vous concernant.</strong>
+Le jeu ne demande ni votre nom, ni votre adresse e-mail, ni votre numéro de téléphone, ni votre position
+précise, ni vos contacts, ni aucune autre donnée personnelle similaire. Il n'y a ni inscription ni
+connexion, et nous ne conservons aucun profil utilisateur sur nos serveurs.</p>
+<p>La seule exception est la publicité&nbsp;: notre fournisseur publicitaire, Google, traite
+<strong>directement</strong> les données décrites ci-dessous afin de diffuser des annonces. Ces données ne
+nous sont pas transmises.</p>
+
+<h2>2. Données stockées sur votre appareil</h2>
+<p>Votre progression (niveaux terminés, pièces, nombre de bonus et paramètres) est enregistrée dans un
+fichier <strong>uniquement sur votre propre appareil</strong>. Elle n'est envoyée ni à nous ni à des tiers.
+Si vous supprimez l'application, ces données sont également supprimées.</p>
+
+<h2>3. Achats</h2>
+<p>Les achats intégrés sont entièrement gérés par <strong>Google Play</strong> (Android) et
+l'<strong>App Store d'Apple</strong> (iOS). Vos informations de paiement ne nous parviennent jamais&nbsp;;
+nous ne les voyons pas et ne les conservons pas.</p>
+<p>Lorsqu'un achat est finalisé, nous enregistrons sur votre appareil l'<strong>identifiant de
+transaction</strong> fourni par la boutique. Son seul but est d'éviter que le même achat soit livré deux
+fois. Il ne s'agit pas d'une donnée personnelle et il ne quitte jamais l'appareil.</p>
+<p>Les achats reposent sur le service «&nbsp;Unity In-App Purchasing&nbsp;» de <strong>Unity
+Technologies</strong>, qui peut traiter des données techniques et relatives à l'appareil pour communiquer
+avec les boutiques. Voir la
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Politique de confidentialité de Unity</a>.
+Les <a href="https://policies.google.com/privacy?hl=fr" rel="noopener">Règles de confidentialité de Google</a>
+et la <a href="https://www.apple.com/legal/privacy/" rel="noopener">Politique de confidentialité d'Apple</a>
+s'appliquent également.</p>
+
+<h2>4. Publicité</h2>
+<p>Pour rester gratuit, le jeu affiche des annonces via <strong>Google AdMob</strong>. Il en existe deux types&nbsp;:</p>
+<ul>
+  <li><strong>Annonces avec récompense</strong> — affichées uniquement lorsque vous choisissez d'en regarder
+  une (par exemple «&nbsp;Regarder une pub pour un butin x2&nbsp;» ou «&nbsp;Pièces gratuites&nbsp;» dans la
+  boutique). Si vous ne les regardez pas, vous ne perdez rien.</li>
+  <li><strong>Annonces interstitielles</strong> — annonces en plein écran affichées à la fin de certains
+  niveaux, une fois ceux-ci terminés. Aucune annonce n'interrompt jamais la partie.</li>
+</ul>
+
+<h3>Données traitées pour la publicité</h3>
+<p>Pour diffuser des annonces, limiter leur répétition, lutter contre la fraude et mesurer leurs
+performances, Google peut traiter&nbsp;:</p>
+<ul>
+  <li>Votre <strong>identifiant publicitaire</strong> — l'identifiant publicitaire (AAID) sur Android ou
+  l'identifiant publicitaire (IDFA) sur iOS. Il s'agit d'un numéro réinitialisable qui n'est pas lié à
+  votre nom.</li>
+  <li>Votre adresse IP et la <strong>position approximative</strong> qui en est déduite (au niveau du pays
+  ou de la ville, et non la position GPS)</li>
+  <li>Le modèle de l'appareil, la version du système d'exploitation, la langue et d'autres informations
+  techniques similaires</li>
+  <li>Votre interaction avec l'annonce (affichée, regardée, touchée)</li>
+</ul>
+<p>Ces données sont envoyées <strong>directement à Google</strong>. Nous ne les collectons pas, ne les
+voyons pas et ne les conservons pas&nbsp;; nous recevons uniquement des rapports de revenus agrégés et non
+personnels. Pour savoir comment Google utilise ces données, consultez
+<a href="https://policies.google.com/technologies/partner-sites?hl=fr" rel="noopener">Comment Google utilise les informations des sites ou applications qui utilisent ses services</a>
+et les <a href="https://policies.google.com/privacy?hl=fr" rel="noopener">Règles de confidentialité de Google</a>.</p>
+
+<h3>Votre consentement et vos choix</h3>
+<p>Les utilisateurs de l'<strong>Espace économique européen, du Royaume-Uni et de la Suisse</strong> voient
+s'afficher un écran de consentement lors de la première ouverture du jeu, qui leur demande s'ils acceptent
+la publicité personnalisée. Vous pouvez modifier ce choix plus tard dans le jeu, sous
+<strong>Paramètres &rsaquo; Options de confidentialité</strong>.</p>
+<p>Si vous refusez la personnalisation, des annonces continuent d'être affichées, mais elles ne sont pas
+choisies en fonction de vos centres d'intérêt. Vous pouvez à tout moment réinitialiser ou supprimer votre
+identifiant publicitaire dans les réglages de votre appareil&nbsp;:</p>
+<ul>
+  <li><strong>Android&nbsp;:</strong> Paramètres &rsaquo; Google &rsaquo; Tous les services &rsaquo; Annonces</li>
+  <li><strong>iOS&nbsp;:</strong> Réglages &rsaquo; Confidentialité et sécurité &rsaquo; Suivi. Sur iOS,
+  l'application demande également l'autorisation de suivi&nbsp;; si vous refusez, les annonces ne sont pas
+  personnalisées.</li>
+</ul>
+
+<h3>L'achat «&nbsp;Sans pubs&nbsp;»</h3>
+<p>L'achat de <strong>Sans pubs</strong> dans la boutique supprime les annonces interstitielles affichées à
+la fin des niveaux. <strong>Les annonces avec récompense restent disponibles</strong> — vous ne les
+regardez que si vous le souhaitez et elles vous rapportent des pièces&nbsp;; les supprimer vous priverait
+de cette récompense.</p>
+
+<h2>5. Mesure des installations, statistiques et rapports de plantage</h2>
+<p>Le jeu ne comporte <strong>ni statistiques de jeu ni rapports de plantage</strong>&nbsp;: nous ne suivons
+pas les niveaux auxquels vous jouez ni pendant combien de temps. Google AdMob mesure uniquement les
+performances de ses propres annonces (voir la section 4).</p>
+<p>Pour savoir de quelle annonce ou de quelle page de boutique provient une installation, et pour mesurer
+les revenus publicitaires de manière agrégée, nous utilisons un service de mesure appelé
+<strong>Tenjin</strong>. Tenjin peut traiter&nbsp;:</p>
+<ul>
+  <li>Votre <strong>identifiant publicitaire</strong> (AAID sur Android&nbsp;; IDFA sur iOS uniquement si
+  vous avez accordé l'autorisation de suivi) et, sur iOS, l'identifiant pour les fournisseurs (IDFV)</li>
+  <li>Votre adresse IP et le pays qui en est déduit</li>
+  <li>Le modèle de l'appareil, la version du système d'exploitation, la langue et le fuseau horaire</li>
+  <li>La source d'installation (Google Play Install Referrer / Apple SKAdNetwork) et les heures
+  d'ouverture de l'application</li>
+  <li>La valeur des revenus des annonces affichées (une propriété de l'annonce, et non de votre personne)</li>
+</ul>
+<p>Votre nom, votre adresse e-mail, votre position GPS et votre comportement dans le jeu ne sont
+<strong>pas</strong> envoyés à Tenjin. Dans l'Espace économique européen, au Royaume-Uni et en Suisse, si
+vous n'autorisez pas le stockage d'informations sur votre appareil dans l'écran de consentement,
+<strong>aucune donnée n'est envoyée à Tenjin</strong>. Politique de confidentialité de Tenjin&nbsp;:
+<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Partage avec des tiers</h2>
+<p>Nous ne vendons ni ne louons vos données. Les tiers qui traitent des données en lien avec le jeu sont&nbsp;:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — diffusion des annonces&nbsp;; les données listées à la section 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — achats et paiement</li>
+  <li><strong>Unity Technologies</strong> — infrastructure d'achat</li>
+  <li><strong>Tenjin</strong> — mesure de la source d'installation et des revenus publicitaires&nbsp;; les
+  données listées à la section 5</li>
+</ul>
+
+<h2>7. Enfants</h2>
+<p>Le jeu ne s'adresse pas aux enfants&nbsp;; il vise un public général âgé de <strong>13 ans et plus</strong>.
+Nous ne collectons pas sciemment de données auprès d'utilisateurs de moins de 13 ans et nous ne faisons pas
+la promotion du jeu auprès des enfants. Si vous pensez que votre enfant utilise le jeu et que le traitement
+des données vous inquiète, contactez-nous à l'adresse ci-dessous.</p>
+
+<h2>8. Vos droits</h2>
+<p>Comme nous ne conservons aucun enregistrement permettant de vous identifier, nous n'avons rien à effacer,
+rectifier ou exporter. Pour supprimer votre progression locale, il suffit de désinstaller l'application.
+Pour les données publicitaires, vous pouvez exercer vos droits auprès de
+<a href="https://policies.google.com/privacy?hl=fr" rel="noopener">Google</a>, en tant que responsable du
+traitement, et réinitialiser votre identifiant publicitaire comme décrit ci-dessus.</p>
+
+<h2>9. Modifications</h2>
+<p>Si cette politique change, la date en haut de la page sera mise à jour. Les modifications importantes
+seront également annoncées dans le jeu.</p>
+
+<h2>10. Contact</h2>
+<p>Questions&nbsp;: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Ce texte est une traduction de l'original anglais. En cas de divergence entre les deux versions, la version anglaise prévaut.</p>
+</article>
+
+<article data-lang="it" lang="it" hidden>
+<h1>Captain Match — Informativa sulla privacy</h1>
+<p class="sub">Ultimo aggiornamento: 22 settembre 2026</p>
+
+<p>Captain Match è un gioco rompicapo per dispositivi mobili sviluppato da <strong>Mehmet Ucar</strong>.
+Questa pagina spiega quali dati tratta il gioco. In breve: <strong>il gioco non ti chiede dati personali
+come il tuo nome o il tuo indirizzo email, non richiede un account e non invia mai i tuoi progressi ai
+nostri server.</strong> Poiché il gioco è gratuito, mostra pubblicità; <strong>Google</strong>, che fornisce
+questi annunci, tratta a tale scopo l'identificatore pubblicitario del tuo dispositivo e alcuni dati
+tecnici. Vedi la sezione 4.</p>
+
+<h2>1. Dati personali che raccogliamo</h2>
+<p><strong>In qualità di sviluppatore, non raccogliamo alcun dato personale che ti riguardi.</strong> Il
+gioco non richiede il tuo nome, indirizzo email, numero di telefono, posizione precisa, contatti o altri dati
+personali simili. Non ci sono registrazione né accesso e non conserviamo alcun profilo utente sui nostri server.</p>
+<p>L'unica eccezione è la pubblicità: il nostro fornitore pubblicitario, Google, tratta
+<strong>direttamente</strong> i dati descritti di seguito per fornire gli annunci. Questi dati non vengono
+trasmessi a noi.</p>
+
+<h2>2. Dati salvati sul tuo dispositivo</h2>
+<p>I tuoi progressi di gioco (livelli completati, monete, numero di potenziamenti e impostazioni) vengono
+salvati in un file <strong>esclusivamente sul tuo dispositivo</strong>. Non vengono inviati né a noi né a
+terze parti. Se elimini l'app, anche questi dati vengono eliminati.</p>
+
+<h2>3. Acquisti</h2>
+<p>Gli acquisti in-app sono gestiti interamente da <strong>Google Play</strong> (Android) e
+dall'<strong>App Store di Apple</strong> (iOS). I tuoi dati di pagamento non ci raggiungono mai; non li
+vediamo e non li conserviamo.</p>
+<p>Al termine di un acquisto, salviamo sul tuo dispositivo l'<strong>identificativo della
+transazione</strong> rilasciato dallo store. Il suo unico scopo è evitare che lo stesso acquisto venga
+consegnato due volte. Non è un dato personale e non lascia mai il dispositivo.</p>
+<p>Gli acquisti sono implementati con il servizio "Unity In-App Purchasing" di <strong>Unity
+Technologies</strong>, che può trattare dati tecnici e del dispositivo per comunicare con gli store.
+Consulta l'<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Informativa sulla privacy di Unity</a>.
+Si applicano inoltre le <a href="https://policies.google.com/privacy?hl=it" rel="noopener">Norme sulla privacy di Google</a>
+e l'<a href="https://www.apple.com/legal/privacy/" rel="noopener">Informativa sulla privacy di Apple</a>.</p>
+
+<h2>4. Pubblicità</h2>
+<p>Per rimanere gratuito, il gioco mostra annunci tramite <strong>Google AdMob</strong>. Ce ne sono di due tipi:</p>
+<ul>
+  <li><strong>Annunci con premio</strong> — vengono mostrati solo quando scegli di guardarne uno (ad
+  esempio "Guarda un annuncio per un bottino x2" o "Monete gratis" nel negozio). Se non li guardi, non
+  perdi nulla.</li>
+  <li><strong>Annunci interstitial</strong> — annunci a schermo intero mostrati alla fine di alcuni livelli,
+  dopo averli completati. Nessun annuncio interrompe mai il gioco.</li>
+</ul>
+
+<h3>Dati trattati per la pubblicità</h3>
+<p>Per fornire gli annunci, limitarne la ripetizione, proteggere dalle frodi e misurarne il rendimento,
+Google può trattare:</p>
+<ul>
+  <li>Il tuo <strong>identificatore pubblicitario</strong>: l'ID pubblicità (AAID) su Android o
+  l'identificatore per gli inserzionisti (IDFA) su iOS. È un numero reimpostabile che non è collegato al
+  tuo nome.</li>
+  <li>Il tuo indirizzo IP e la <strong>posizione approssimativa</strong> ricavata da esso (a livello di
+  paese/città, non la posizione GPS)</li>
+  <li>Modello del dispositivo, versione del sistema operativo, lingua e informazioni tecniche simili</li>
+  <li>La tua interazione con l'annuncio (mostrato, guardato, toccato)</li>
+</ul>
+<p>Questi dati vanno <strong>direttamente a Google</strong>. Noi non li raccogliamo, non li vediamo e non
+li conserviamo; riceviamo solo report aggregati e non personali sulle entrate. Per sapere come Google
+utilizza questi dati, consulta
+<a href="https://policies.google.com/technologies/partner-sites?hl=it" rel="noopener">In che modo Google utilizza le informazioni dei siti o delle app che utilizzano i suoi servizi</a>
+e le <a href="https://policies.google.com/privacy?hl=it" rel="noopener">Norme sulla privacy di Google</a>.</p>
+
+<h3>Il tuo consenso e le tue scelte</h3>
+<p>Agli utenti dello <strong>Spazio economico europeo, del Regno Unito e della Svizzera</strong> viene
+mostrata una schermata di consenso la prima volta che aprono il gioco, in cui si chiede se accettano la
+pubblicità personalizzata. Puoi modificare questa scelta in seguito nel gioco, in
+<strong>Impostazioni &rsaquo; Opzioni sulla privacy</strong>.</p>
+<p>Se rifiuti la personalizzazione, gli annunci continuano a essere mostrati, ma non vengono scelti in base
+ai tuoi interessi. Puoi reimpostare o eliminare il tuo identificatore pubblicitario in qualsiasi momento
+dalle impostazioni del dispositivo:</p>
+<ul>
+  <li><strong>Android:</strong> Impostazioni &rsaquo; Google &rsaquo; Tutti i servizi &rsaquo; Annunci</li>
+  <li><strong>iOS:</strong> Impostazioni &rsaquo; Privacy e sicurezza &rsaquo; Tracciamento. Su iOS l'app
+  chiede anche l'autorizzazione al tracciamento; se la rifiuti, gli annunci non vengono personalizzati.</li>
+</ul>
+
+<h3>L'acquisto "Niente pubblicità"</h3>
+<p>Acquistando <strong>Niente pubblicità</strong> nel negozio, vengono rimossi gli annunci interstitial
+mostrati alla fine dei livelli. <strong>Gli annunci con premio restano disponibili</strong>: li guardi solo
+se vuoi e ti fanno guadagnare monete, quindi rimuoverli ti priverebbe di questa ricompensa.</p>
+
+<h2>5. Misurazione delle installazioni, analisi e segnalazione degli arresti anomali</h2>
+<p>Il gioco <strong>non ha analisi di gioco né segnalazione degli arresti anomali</strong>: non teniamo
+traccia di quali livelli giochi né per quanto tempo. Google AdMob misura solo il rendimento dei propri
+annunci (vedi la sezione 4).</p>
+<p>Per capire da quale annuncio o pagina dello store proviene un'installazione e per misurare in forma
+aggregata le entrate pubblicitarie, utilizziamo un servizio di misurazione chiamato <strong>Tenjin</strong>.
+Tenjin può trattare:</p>
+<ul>
+  <li>Il tuo <strong>identificatore pubblicitario</strong> (AAID su Android; IDFA su iOS solo se hai
+  concesso l'autorizzazione al tracciamento) e, su iOS, l'identificatore per il fornitore (IDFV)</li>
+  <li>Il tuo indirizzo IP e il paese ricavato da esso</li>
+  <li>Modello del dispositivo, versione del sistema operativo, lingua e fuso orario</li>
+  <li>Origine dell'installazione (Google Play Install Referrer / Apple SKAdNetwork) e gli orari di
+  apertura dell'app</li>
+  <li>Il valore delle entrate degli annunci mostrati (una proprietà dell'annuncio, non tua)</li>
+</ul>
+<p>Il tuo nome, il tuo indirizzo email, la tua posizione GPS e il tuo comportamento nel gioco
+<strong>non</strong> vengono inviati a Tenjin. Nello Spazio economico europeo, nel Regno Unito e in
+Svizzera, se nella schermata di consenso non consenti l'archiviazione di informazioni sul tuo dispositivo,
+<strong>a Tenjin non viene inviato alcun dato</strong>. Informativa sulla privacy di Tenjin:
+<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Condivisione con terze parti</h2>
+<p>Non vendiamo né affittiamo i tuoi dati. Le terze parti che trattano dati in relazione al gioco sono:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — pubblicazione degli annunci; i dati indicati nella sezione 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — acquisti e pagamenti</li>
+  <li><strong>Unity Technologies</strong> — infrastruttura per gli acquisti</li>
+  <li><strong>Tenjin</strong> — misurazione dell'origine delle installazioni e delle entrate
+  pubblicitarie; i dati indicati nella sezione 5</li>
+</ul>
+
+<h2>7. Minori</h2>
+<p>Il gioco non è rivolto ai bambini; si rivolge a un pubblico generico di <strong>almeno 13 anni</strong>.
+Non raccogliamo consapevolmente dati da utenti di età inferiore a 13 anni e non promuoviamo il gioco presso
+i bambini. Se pensi che tuo figlio o tua figlia usi il gioco e ti preoccupa il trattamento dei dati,
+contattaci all'indirizzo qui sotto.</p>
+
+<h2>8. I tuoi diritti</h2>
+<p>Poiché non conserviamo alcun dato che ti identifichi, da parte nostra non c'è nulla da cancellare,
+correggere o esportare. Per rimuovere i tuoi progressi locali è sufficiente disinstallare l'app. Per i dati
+pubblicitari puoi esercitare i tuoi diritti nei confronti di
+<a href="https://policies.google.com/privacy?hl=it" rel="noopener">Google</a> in qualità di titolare del
+trattamento, e puoi reimpostare il tuo identificatore pubblicitario come descritto sopra.</p>
+
+<h2>9. Modifiche</h2>
+<p>Se questa informativa cambia, la data in cima alla pagina verrà aggiornata. Le modifiche importanti
+verranno annunciate anche nel gioco.</p>
+
+<h2>10. Contatti</h2>
+<p>Domande: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Questo testo è una traduzione dell'originale in inglese. In caso di discrepanze tra le due versioni, prevale la versione inglese.</p>
+</article>
+
+<article data-lang="pt" lang="pt-BR" hidden>
+<h1>Captain Match — Política de Privacidade</h1>
+<p class="sub">Última atualização: 22 de setembro de 2026</p>
+
+<p>Captain Match é um jogo de quebra-cabeça para celular desenvolvido por <strong>Mehmet Ucar</strong>. Esta
+página explica quais dados o jogo trata. Em resumo: <strong>o jogo não pede informações pessoais como seu
+nome ou e-mail, não exige conta e nunca envia seu progresso para os nossos servidores.</strong> Como o jogo
+é gratuito, ele exibe anúncios; o <strong>Google</strong>, que veicula esses anúncios, trata para isso o
+identificador de publicidade do seu aparelho e alguns dados técnicos. Veja a seção 4.</p>
+
+<h2>1. Dados pessoais que coletamos</h2>
+<p><strong>Como desenvolvedor, não coletamos nenhum dado pessoal seu.</strong> O jogo não solicita seu nome,
+e-mail, número de telefone, localização exata, contatos nem qualquer dado pessoal semelhante. Não há
+cadastro nem login, e não mantemos nenhum perfil de usuário em nenhum servidor nosso.</p>
+<p>A única exceção é a publicidade: nosso provedor de anúncios, o Google, trata <strong>diretamente</strong>
+os dados descritos abaixo para veicular anúncios. Esses dados não são repassados para nós.</p>
+
+<h2>2. Dados armazenados no seu aparelho</h2>
+<p>Seu progresso no jogo (níveis concluídos, moedas, quantidade de reforços e configurações) é salvo em um
+arquivo <strong>somente no seu próprio aparelho</strong>. Ele não é enviado para nós nem para terceiros. Se
+você excluir o app, esses dados também serão excluídos.</p>
+
+<h2>3. Compras</h2>
+<p>As compras no app são processadas inteiramente pelo <strong>Google Play</strong> (Android) e pela
+<strong>App Store da Apple</strong> (iOS). Seus dados de pagamento nunca chegam até nós; não os vemos nem os
+armazenamos.</p>
+<p>Quando uma compra é concluída, armazenamos no seu aparelho o <strong>identificador da transação</strong>
+emitido pela loja. Seu único objetivo é evitar que a mesma compra seja entregue duas vezes. Ele não é um
+dado pessoal e nunca sai do aparelho.</p>
+<p>As compras são implementadas com o serviço "Unity In-App Purchasing" da <strong>Unity Technologies</strong>,
+que pode tratar dados técnicos e do aparelho para se comunicar com as lojas. Veja a
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Política de Privacidade da Unity</a>.
+A <a href="https://policies.google.com/privacy?hl=pt-BR" rel="noopener">Política de Privacidade do Google</a>
+e a <a href="https://www.apple.com/legal/privacy/" rel="noopener">Política de Privacidade da Apple</a>
+também se aplicam.</p>
+
+<h2>4. Publicidade</h2>
+<p>Para continuar gratuito, o jogo exibe anúncios por meio do <strong>Google AdMob</strong>. Há dois tipos:</p>
+<ul>
+  <li><strong>Anúncios premiados</strong> — exibidos somente quando você escolhe assistir a um (por exemplo,
+  "Assista a um anúncio e ganhe saque x2" ou "Moedas grátis" na loja). Se você não assistir, não perde nada.</li>
+  <li><strong>Anúncios intersticiais</strong> — anúncios em tela cheia exibidos ao final de determinados
+  níveis, depois que você os conclui. Nenhum anúncio interrompe a partida.</li>
+</ul>
+
+<h3>Dados tratados para publicidade</h3>
+<p>Para veicular anúncios, limitar a repetição, proteger contra fraudes e medir o desempenho, o Google pode tratar:</p>
+<ul>
+  <li>Seu <strong>identificador de publicidade</strong> — o ID de publicidade (AAID) no Android ou o
+  identificador de publicidade (IDFA) no iOS. É um número que pode ser redefinido e que não está vinculado
+  ao seu nome.</li>
+  <li>Seu endereço IP e a <strong>localização aproximada</strong> derivada dele (em nível de país/cidade, não
+  a localização por GPS)</li>
+  <li>Modelo do aparelho, versão do sistema operacional, idioma e informações técnicas semelhantes</li>
+  <li>Sua interação com o anúncio (exibido, assistido, tocado)</li>
+</ul>
+<p>Esses dados vão <strong>diretamente para o Google</strong>. Nós não os coletamos, não os vemos nem os
+armazenamos; recebemos apenas relatórios de receita agregados e não pessoais. Para saber como o Google usa
+esses dados, consulte
+<a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" rel="noopener">Como o Google usa informações de sites ou apps que utilizam os serviços do Google</a>
+e a <a href="https://policies.google.com/privacy?hl=pt-BR" rel="noopener">Política de Privacidade do Google</a>.</p>
+
+<h3>Seu consentimento e suas escolhas</h3>
+<p>Usuários do <strong>Espaço Econômico Europeu, do Reino Unido e da Suíça</strong> veem uma tela de
+consentimento na primeira vez que abrem o jogo, perguntando se aceitam anúncios personalizados. Você pode
+mudar essa escolha depois, no jogo, em <strong>Configurações &rsaquo; Opções de privacidade</strong>.</p>
+<p>Se você recusar a personalização, os anúncios continuam sendo exibidos, mas não são escolhidos com base
+nos seus interesses. Você pode redefinir ou excluir seu identificador de publicidade a qualquer momento nas
+configurações do aparelho:</p>
+<ul>
+  <li><strong>Android:</strong> Configurações &rsaquo; Google &rsaquo; Todos os serviços &rsaquo; Anúncios</li>
+  <li><strong>iOS:</strong> Ajustes &rsaquo; Privacidade e Segurança &rsaquo; Rastreamento. No iOS, o app
+  também pede permissão de rastreamento; se você recusar, os anúncios não são personalizados.</li>
+</ul>
+
+<h3>A compra "Sem anúncios"</h3>
+<p>Ao comprar <strong>Sem anúncios</strong> na loja, os anúncios intersticiais exibidos ao final dos níveis
+deixam de aparecer. <strong>Os anúncios premiados continuam disponíveis</strong> — você só os assiste se
+quiser e eles rendem moedas, então removê-los tiraria essa recompensa de você.</p>
+
+<h2>5. Medição de instalações, análises e relatórios de falhas</h2>
+<p>O jogo <strong>não tem análise de jogabilidade nem relatórios de falhas</strong>: não acompanhamos quais
+níveis você joga nem por quanto tempo. O Google AdMob mede apenas o desempenho dos próprios anúncios (veja a
+seção 4).</p>
+<p>Para entender de qual anúncio ou página da loja veio uma instalação, e para medir a receita de anúncios
+de forma agregada, usamos um serviço de medição chamado <strong>Tenjin</strong>. A Tenjin pode tratar:</p>
+<ul>
+  <li>Seu <strong>identificador de publicidade</strong> (AAID no Android; IDFA no iOS somente se você tiver
+  concedido a permissão de rastreamento) e, no iOS, o identificador do fornecedor (IDFV)</li>
+  <li>Seu endereço IP e o país derivado dele</li>
+  <li>Modelo do aparelho, versão do sistema operacional, idioma e fuso horário</li>
+  <li>Origem da instalação (Google Play Install Referrer / Apple SKAdNetwork) e os horários em que o app é aberto</li>
+  <li>O valor de receita dos anúncios exibidos (uma propriedade do anúncio, não sua)</li>
+</ul>
+<p>Seu nome, e-mail, localização por GPS e comportamento no jogo <strong>não</strong> são enviados à Tenjin.
+No Espaço Econômico Europeu, no Reino Unido e na Suíça, se você não permitir o armazenamento de informações
+no seu aparelho na tela de consentimento, <strong>nenhum dado é enviado à Tenjin</strong>. Política de
+privacidade da Tenjin: <a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Compartilhamento com terceiros</h2>
+<p>Não vendemos nem alugamos seus dados. Os terceiros que tratam dados relacionados ao jogo são:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — veiculação de anúncios; os dados listados na seção 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — compras e pagamento</li>
+  <li><strong>Unity Technologies</strong> — infraestrutura de compras</li>
+  <li><strong>Tenjin</strong> — medição da origem das instalações e da receita de anúncios; os dados
+  listados na seção 5</li>
+</ul>
+
+<h2>7. Crianças</h2>
+<p>O jogo não é direcionado a crianças; ele se destina a um público geral com <strong>13 anos ou mais</strong>.
+Não coletamos intencionalmente dados de usuários menores de 13 anos e não divulgamos o jogo para crianças. Se
+você acredita que seu filho ou filha usa o jogo e está preocupado com o tratamento de dados, entre em
+contato pelo endereço abaixo.</p>
+
+<h2>8. Seus direitos</h2>
+<p>Como não mantemos nenhum registro que identifique você, não há nada do nosso lado para apagar, corrigir ou
+exportar. Para remover seu progresso local, basta desinstalar o app. Quanto aos dados de publicidade, você
+pode exercer seus direitos junto ao <a href="https://policies.google.com/privacy?hl=pt-BR" rel="noopener">Google</a>,
+como controlador, e pode redefinir seu identificador de publicidade conforme descrito acima.</p>
+
+<h2>9. Alterações</h2>
+<p>Se esta política mudar, a data no topo da página será atualizada. Alterações importantes também serão
+anunciadas no jogo.</p>
+
+<h2>10. Contato</h2>
+<p>Dúvidas: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Este texto é uma tradução do original em inglês. Em caso de divergência entre as versões, prevalece a versão em inglês.</p>
+</article>
+
+<article data-lang="ru" lang="ru" hidden>
+<h1>Captain Match — Политика конфиденциальности</h1>
+<p class="sub">Последнее обновление: 22 сентября 2026 г.</p>
+
+<p>Captain Match — мобильная игра-головоломка, разработанная <strong>Mehmet Ucar</strong>. На этой странице
+описано, какие данные обрабатывает игра. Коротко: <strong>игра не запрашивает личные сведения, такие как
+ваше имя или адрес электронной почты, не требует учётной записи и никогда не отправляет ваш прогресс на наши
+серверы.</strong> Игра бесплатная, поэтому в ней показывается реклама; <strong>Google</strong>, который её
+показывает, обрабатывает для этого рекламный идентификатор вашего устройства и некоторые технические
+данные. Подробнее — в разделе 4.</p>
+
+<h2>1. Какие персональные данные мы собираем</h2>
+<p><strong>Мы как разработчик не собираем о вас никаких персональных данных.</strong> Игра не запрашивает
+ваше имя, адрес электронной почты, номер телефона, точное местоположение, контакты или иные подобные
+персональные данные. Регистрации и входа в аккаунт нет, и мы не храним профили пользователей ни на одном из
+наших серверов.</p>
+<p>Единственное исключение — реклама: наш рекламный партнёр Google <strong>напрямую</strong> обрабатывает
+описанные ниже данные, чтобы показывать рекламу. Эти данные нам не передаются.</p>
+
+<h2>2. Данные, хранящиеся на вашем устройстве</h2>
+<p>Ваш игровой прогресс (пройденные уровни, монеты, количество бонусов и настройки) хранится в файле
+<strong>только на вашем устройстве</strong>. Он не отправляется ни нам, ни третьим лицам. При удалении
+приложения эти данные также удаляются.</p>
+
+<h2>3. Покупки</h2>
+<p>Встроенные покупки полностью обрабатываются через <strong>Google Play</strong> (Android) и
+<strong>Apple App Store</strong> (iOS). Ваши платёжные данные никогда к нам не попадают; мы их не видим и не храним.</p>
+<p>После завершения покупки мы сохраняем на вашем устройстве <strong>идентификатор транзакции</strong>,
+выданный магазином. Его единственная цель — не допустить, чтобы одна и та же покупка была зачислена дважды.
+Это не персональные данные, и идентификатор никогда не покидает устройство.</p>
+<p>Покупки реализованы с помощью сервиса «Unity In-App Purchasing» компании <strong>Unity Technologies</strong>,
+который может обрабатывать технические данные и данные устройства для связи с магазинами. См.
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Политику конфиденциальности Unity</a>.
+Также действуют <a href="https://policies.google.com/privacy?hl=ru" rel="noopener">Политика конфиденциальности Google</a>
+и <a href="https://www.apple.com/legal/privacy/" rel="noopener">Политика конфиденциальности Apple</a>.</p>
+
+<h2>4. Реклама</h2>
+<p>Чтобы игра оставалась бесплатной, в ней показывается реклама через <strong>Google AdMob</strong>. Она
+бывает двух видов:</p>
+<ul>
+  <li><strong>Реклама с вознаграждением</strong> — показывается, только если вы сами решили её посмотреть
+  (например, «Посмотреть рекламу за добычу x2» или «Бесплатные монеты» в магазине). Если вы её не смотрите,
+  вы ничего не теряете.</li>
+  <li><strong>Межстраничная реклама</strong> — полноэкранная реклама, которая показывается в конце некоторых
+  уровней после их прохождения. Реклама никогда не прерывает игру.</li>
+</ul>
+
+<h3>Данные, обрабатываемые для рекламы</h3>
+<p>Чтобы показывать рекламу, ограничивать её повторы, защищаться от мошенничества и измерять эффективность,
+Google может обрабатывать:</p>
+<ul>
+  <li>Ваш <strong>рекламный идентификатор</strong> — рекламный идентификатор (AAID) на Android или
+  идентификатор для рекламодателей (IDFA) на iOS. Это сбрасываемый номер, не связанный с вашим именем.</li>
+  <li>Ваш IP-адрес и определяемое по нему <strong>приблизительное местоположение</strong> (на уровне
+  страны/города, а не местоположение по GPS)</li>
+  <li>Модель устройства, версию операционной системы, язык и подобные технические сведения</li>
+  <li>Ваше взаимодействие с рекламой (показана, просмотрена, нажата)</li>
+</ul>
+<p>Эти данные передаются <strong>напрямую в Google</strong>. Мы их не собираем, не видим и не храним; мы
+получаем только сводные обезличенные отчёты о доходах. О том, как Google использует эти данные, читайте на
+страницах
+<a href="https://policies.google.com/technologies/partner-sites?hl=ru" rel="noopener">Как Google использует информацию с сайтов и из приложений, в которых применяются сервисы Google</a>
+и <a href="https://policies.google.com/privacy?hl=ru" rel="noopener">Политика конфиденциальности Google</a>.</p>
+
+<h3>Ваше согласие и выбор</h3>
+<p>Пользователям в <strong>Европейской экономической зоне, Великобритании и Швейцарии</strong> при первом
+запуске игры показывается экран согласия с вопросом, согласны ли они на персонализированную рекламу. Позже
+вы можете изменить свой выбор в игре: <strong>Настройки &rsaquo; Настройки конфиденциальности</strong>.</p>
+<p>Если вы откажетесь от персонализации, реклама по-прежнему будет показываться, но не будет подбираться с
+учётом ваших интересов. Вы можете в любой момент сбросить или удалить рекламный идентификатор в настройках
+устройства:</p>
+<ul>
+  <li><strong>Android:</strong> Настройки &rsaquo; Google &rsaquo; Все сервисы &rsaquo; Реклама</li>
+  <li><strong>iOS:</strong> Настройки &rsaquo; Конфиденциальность и безопасность &rsaquo; Отслеживание. На iOS
+  приложение также запрашивает разрешение на отслеживание; если вы откажете, реклама не будет
+  персонализироваться.</li>
+</ul>
+
+<h3>Покупка «Без рекламы»</h3>
+<p>Покупка <strong>«Без рекламы»</strong> в магазине убирает межстраничную рекламу в конце уровней.
+<strong>Реклама с вознаграждением остаётся доступной</strong> — вы смотрите её только по собственному
+желанию и получаете за неё монеты, поэтому её удаление лишило бы вас этой награды.</p>
+
+<h2>5. Измерение установок, аналитика и отчёты о сбоях</h2>
+<p>В игре <strong>нет игровой аналитики и отчётов о сбоях</strong>: мы не отслеживаем, какие уровни вы
+проходите и сколько времени играете. Google AdMob измеряет только эффективность собственной рекламы (см.
+раздел 4).</p>
+<p>Чтобы понимать, с какой рекламы или страницы магазина пришла установка, и измерять доход от рекламы в
+сводном виде, мы используем сервис измерений <strong>Tenjin</strong>. Tenjin может обрабатывать:</p>
+<ul>
+  <li>Ваш <strong>рекламный идентификатор</strong> (AAID на Android; IDFA на iOS — только если вы дали
+  разрешение на отслеживание), а на iOS также идентификатор поставщика (IDFV)</li>
+  <li>Ваш IP-адрес и определяемую по нему страну</li>
+  <li>Модель устройства, версию операционной системы, язык и часовой пояс</li>
+  <li>Источник установки (Google Play Install Referrer / Apple SKAdNetwork) и время запусков приложения</li>
+  <li>Доход от показанной рекламы (это свойство рекламы, а не ваше)</li>
+</ul>
+<p>Ваше имя, адрес электронной почты, местоположение по GPS и поведение в игре <strong>не</strong>
+передаются в Tenjin. Если в Европейской экономической зоне, Великобритании или Швейцарии вы не разрешили на
+экране согласия хранение информации на устройстве, <strong>в Tenjin вообще не передаются никакие
+данные</strong>. Политика конфиденциальности Tenjin: <a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Передача данных третьим лицам</h2>
+<p>Мы не продаём и не сдаём в аренду ваши данные. В связи с игрой данные обрабатывают следующие третьи лица:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — показ рекламы; данные, перечисленные в разделе 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — покупки и оплата</li>
+  <li><strong>Unity Technologies</strong> — инфраструктура покупок</li>
+  <li><strong>Tenjin</strong> — измерение источников установок и дохода от рекламы; данные, перечисленные в
+  разделе 5</li>
+</ul>
+
+<h2>7. Дети</h2>
+<p>Игра не предназначена для детей; она рассчитана на широкую аудиторию <strong>от 13 лет</strong>. Мы
+сознательно не собираем данные пользователей младше 13 лет и не продвигаем игру среди детей. Если вы
+считаете, что ваш ребёнок пользуется игрой, и вас беспокоит обработка данных, свяжитесь с нами по адресу ниже.</p>
+
+<h2>8. Ваши права</h2>
+<p>Поскольку мы не храним записей, позволяющих вас идентифицировать, у нас нечего удалять, исправлять или
+выгружать. Чтобы удалить локальный прогресс, просто удалите приложение. В отношении рекламных данных вы
+можете реализовать свои права, обратившись в <a href="https://policies.google.com/privacy?hl=ru" rel="noopener">Google</a>
+как к оператору данных, а рекламный идентификатор можно сбросить, как описано выше.</p>
+
+<h2>9. Изменения</h2>
+<p>Если эта политика изменится, дата в верхней части страницы будет обновлена. О существенных изменениях мы
+также сообщим в игре.</p>
+
+<h2>10. Контакты</h2>
+<p>Вопросы: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Этот текст переведён с английского. В случае расхождений между версиями преимущественную силу имеет английская версия.</p>
+</article>
+
+<article data-lang="ja" lang="ja" hidden>
+<h1>Captain Match — プライバシーポリシー</h1>
+<p class="sub">最終更新日：2026年9月22日</p>
+
+<p>Captain Match は、<strong>Mehmet Ucar</strong> が開発したモバイル向けパズルゲームです。このページでは、本ゲームが取り扱うデータについて説明します。要点：<strong>本ゲームは、お名前やメールアドレスなどの個人情報を求めることはなく、アカウントも不要で、プレイの進行状況を当方のサーバーへ送信することもありません。</strong>本ゲームは無料のため広告を表示します。広告を配信する <strong>Google</strong> は、そのために端末の広告 ID と一部の技術データを処理します。詳しくはセクション 4 をご覧ください。</p>
+
+<h2>1. 当方が収集する個人データ</h2>
+<p><strong>開発者として、当方はお客様の個人データを一切収集しません。</strong>本ゲームは、お名前、メールアドレス、電話番号、正確な位置情報、連絡先、その他これに類する個人データを求めません。会員登録やログインはなく、当方のサーバーにユーザープロフィールを保持することもありません。</p>
+<p>唯一の例外は広告です。当方の広告配信事業者である Google が、広告を配信するために以下のデータを<strong>直接</strong>処理します。これらのデータが当方に渡されることはありません。</p>
+
+<h2>2. 端末に保存されるデータ</h2>
+<p>ゲームの進行状況（クリアしたレベル、コイン、ブースターの数、設定）は、<strong>お客様ご自身の端末内にのみ</strong>ファイルとして保存されます。当方や第三者に送信されることはありません。アプリを削除すると、このデータも削除されます。</p>
+
+<h2>3. 購入</h2>
+<p>アプリ内購入は、すべて <strong>Google Play</strong>（Android）および <strong>Apple App Store</strong>（iOS）を通じて処理されます。お支払い情報が当方に届くことはなく、当方がそれを閲覧・保存することもありません。</p>
+<p>購入が完了すると、ストアが発行する<strong>取引 ID</strong> をお客様の端末に保存します。その唯一の目的は、同じ購入が二重に付与されるのを防ぐことです。これは個人データではなく、端末の外に出ることはありません。</p>
+<p>購入機能は <strong>Unity Technologies</strong> の「Unity In-App Purchasing」サービスで実装されており、同サービスはストアとの通信のために技術データや端末データを処理することがあります。詳しくは<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity のプライバシーポリシー</a>をご覧ください。また、<a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google プライバシー ポリシー</a>および <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple のプライバシーポリシー</a>も適用されます。</p>
+
+<h2>4. 広告</h2>
+<p>本ゲームは無料で提供し続けるため、<strong>Google AdMob</strong> を通じて広告を表示します。広告には 2 種類あります。</p>
+<ul>
+  <li><strong>リワード広告</strong> — お客様が自ら視聴を選んだときにのみ表示されます（例：「広告を見てお宝×2」やショップの「無料コイン」）。視聴しなくても不利益はありません。</li>
+  <li><strong>インタースティシャル広告</strong> — 特定のレベルをクリアした後、レベルの終わりに表示される全画面広告です。プレイ中に広告が割り込むことはありません。</li>
+</ul>
+
+<h3>広告のために処理されるデータ</h3>
+<p>広告の配信、表示回数の制限、不正行為の防止、効果測定のために、Google は次のデータを処理することがあります。</p>
+<ul>
+  <li><strong>広告 ID</strong> — Android の広告 ID（AAID）または iOS の広告識別子（IDFA）。リセット可能な番号で、お名前とは結び付いていません。</li>
+  <li>IP アドレスと、そこから推定される<strong>おおよその位置</strong>（国・都市レベル。GPS の位置情報ではありません）</li>
+  <li>端末のモデル、OS のバージョン、言語などの技術情報</li>
+  <li>広告とのやり取り（表示、視聴、タップ）</li>
+</ul>
+<p>これらのデータは <strong>Google に直接</strong>送信されます。当方はそれを収集・閲覧・保存することはなく、個人を特定しない集計済みの収益レポートのみを受け取ります。Google によるデータの利用方法については、<a href="https://policies.google.com/technologies/partner-sites?hl=ja" rel="noopener">Google のサービスを使用するサイトやアプリから収集した情報の Google による使用</a>および <a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google プライバシー ポリシー</a>をご覧ください。</p>
+
+<h3>同意と選択</h3>
+<p><strong>欧州経済領域、英国、スイス</strong>のユーザーには、初めてゲームを開いたときに同意画面が表示され、パーソナライズド広告を受け入れるかどうかを尋ねます。この選択は、後からゲーム内の<strong>設定 &rsaquo; プライバシー設定</strong>で変更できます。</p>
+<p>パーソナライズを拒否した場合も広告は表示されますが、お客様の興味・関心に基づいて選ばれることはありません。広告 ID は、端末の設定からいつでもリセットまたは削除できます。</p>
+<ul>
+  <li><strong>Android：</strong>設定 &rsaquo; Google &rsaquo; すべてのサービス &rsaquo; 広告</li>
+  <li><strong>iOS：</strong>設定 &rsaquo; プライバシーとセキュリティ &rsaquo; トラッキング。iOS では、アプリがトラッキングの許可も求めます。許可しない場合、広告はパーソナライズされません。</li>
+</ul>
+
+<h3>「広告なし」の購入</h3>
+<p>ショップで<strong>広告なし</strong>を購入すると、レベルの終わりに表示されるインタースティシャル広告がなくなります。<strong>リワード広告は引き続き利用できます</strong>。リワード広告はお客様が自ら選んで視聴し、コインを獲得できるものなので、なくしてしまうとその報酬を受け取れなくなるためです。</p>
+
+<h2>5. インストール計測、分析、クラッシュレポート</h2>
+<p>本ゲームには<strong>プレイ分析やクラッシュレポートの仕組みはありません</strong>。どのレベルをどれだけの時間プレイしたかを追跡することはありません。Google AdMob は自社の広告の効果のみを測定します（セクション 4 参照）。</p>
+<p>どの広告やストアページからインストールされたかを把握し、広告収益を集計して測定するため、<strong>Tenjin</strong>という計測サービスを利用しています。Tenjin は次のデータを処理することがあります。</p>
+<ul>
+  <li><strong>広告 ID</strong>（Android では AAID。iOS ではトラッキングを許可した場合のみ IDFA）と、iOS の場合はベンダー ID（IDFV）</li>
+  <li>IP アドレスと、そこから推定される国</li>
+  <li>端末のモデル、OS のバージョン、言語、タイムゾーン</li>
+  <li>インストール元（Google Play Install Referrer / Apple SKAdNetwork）とアプリを開いた日時</li>
+  <li>表示された広告の収益額（お客様ではなく広告に関する値）</li>
+</ul>
+<p>お名前、メールアドレス、GPS の位置情報、ゲーム内での行動が Tenjin に送信されることは<strong>ありません</strong>。欧州経済領域、英国、スイスでは、同意画面で端末への情報の保存を許可しなかった場合、<strong>Tenjin にはデータが一切送信されません</strong>。Tenjin のプライバシーポリシー：<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. 第三者との共有</h2>
+<p>当方がお客様のデータを販売・貸与することはありません。本ゲームに関連してデータを処理する第三者は次のとおりです。</p>
+<ul>
+  <li><strong>Google（AdMob）</strong> — 広告配信。セクション 4 に記載のデータ</li>
+  <li><strong>Google Play / Apple App Store</strong> — 購入と支払い</li>
+  <li><strong>Unity Technologies</strong> — 購入の基盤</li>
+  <li><strong>Tenjin</strong> — インストール元と広告収益の計測。セクション 5 に記載のデータ</li>
+</ul>
+
+<h2>7. お子様について</h2>
+<p>本ゲームはお子様向けではなく、<strong>13 歳以上</strong>の一般ユーザーを対象としています。当方が 13 歳未満のユーザーから故意にデータを収集することはなく、お子様向けに本ゲームを宣伝することもありません。お子様が本ゲームを利用しており、データの取り扱いにご不安がある場合は、下記のアドレスまでご連絡ください。</p>
+
+<h2>8. お客様の権利</h2>
+<p>当方はお客様を特定できる記録を保持していないため、当方側で消去・訂正・エクスポートするデータはありません。端末内の進行状況を削除したい場合は、アプリをアンインストールしてください。広告データに関する権利は、管理者である <a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google</a> に対して行使できます。また、広告 ID は上記の方法でリセットできます。</p>
+
+<h2>9. 変更</h2>
+<p>本ポリシーを変更した場合は、ページ上部の日付を更新します。重要な変更はゲーム内でもお知らせします。</p>
+
+<h2>10. お問い合わせ</h2>
+<p>ご質問はこちら：<a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">この文書は英語の原文を翻訳したものです。両者の内容に相違がある場合は、英語版が優先されます。</p>
+</article>
+
+<article data-lang="ko" lang="ko" hidden>
+<h1>Captain Match — 개인정보 처리방침</h1>
+<p class="sub">최종 업데이트: 2026년 9월 22일</p>
+
+<p>Captain Match는 <strong>Mehmet Ucar</strong>가 개발한 모바일 퍼즐 게임입니다. 이 페이지에서는 게임이 어떤
+데이터를 처리하는지 설명합니다. 요약하면, <strong>게임은 이름이나 이메일 같은 개인 정보를 요구하지 않고, 계정이
+필요 없으며, 진행 상황을 저희 서버로 보내지 않습니다.</strong> 게임이 무료이기 때문에 광고를 표시하며, 광고를
+제공하는 <strong>Google</strong>은 이를 위해 기기의 광고 ID와 일부 기술 데이터를 처리합니다. 자세한 내용은 4항을
+참고하세요.</p>
+
+<h2>1. 저희가 수집하는 개인 정보</h2>
+<p><strong>개발자인 저희는 사용자의 개인 정보를 전혀 수집하지 않습니다.</strong> 게임은 이름, 이메일, 전화번호,
+정확한 위치, 연락처 또는 이와 유사한 개인 정보를 요구하지 않습니다. 회원가입이나 로그인이 없으며, 저희 서버에
+사용자 프로필을 보관하지도 않습니다.</p>
+<p>유일한 예외는 광고입니다. 저희 광고 제공업체인 Google은 광고를 제공하기 위해 아래에 설명된 데이터를
+<strong>직접</strong> 처리합니다. 이 데이터는 저희에게 전달되지 않습니다.</p>
+
+<h2>2. 기기에 저장되는 데이터</h2>
+<p>게임 진행 상황(완료한 레벨, 코인, 부스터 개수, 설정)은 <strong>사용자의 기기에만</strong> 파일로 저장됩니다.
+저희나 제3자에게 전송되지 않습니다. 앱을 삭제하면 이 데이터도 삭제됩니다.</p>
+
+<h2>3. 구매</h2>
+<p>인앱 구매는 전적으로 <strong>Google Play</strong>(Android)와 <strong>Apple App Store</strong>(iOS)를 통해
+처리됩니다. 결제 정보는 저희에게 전달되지 않으며, 저희는 이를 보거나 저장하지 않습니다.</p>
+<p>구매가 완료되면 스토어에서 발급한 <strong>거래 ID</strong>를 사용자의 기기에 저장합니다. 이는 같은 구매가 두 번
+지급되는 것을 막기 위한 목적으로만 사용됩니다. 거래 ID는 개인 정보가 아니며 기기 밖으로 나가지 않습니다.</p>
+<p>구매 기능은 <strong>Unity Technologies</strong>의 'Unity In-App Purchasing' 서비스로 구현되며, 이 서비스는
+스토어와 통신하기 위해 기술 데이터와 기기 데이터를 처리할 수 있습니다.
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity 개인정보처리방침</a>을
+참고하세요. <a href="https://policies.google.com/privacy?hl=ko" rel="noopener">Google 개인정보처리방침</a> 및
+<a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 개인정보 처리방침</a>도 적용됩니다.</p>
+
+<h2>4. 광고</h2>
+<p>게임을 무료로 유지하기 위해 <strong>Google AdMob</strong>을 통해 광고를 표시합니다. 광고는 두 가지입니다.</p>
+<ul>
+  <li><strong>보상형 광고</strong> — 사용자가 직접 시청을 선택할 때만 표시됩니다(예: '광고 보고 보물 x2' 또는
+  상점의 '무료 코인'). 시청하지 않아도 불이익은 없습니다.</li>
+  <li><strong>전면 광고</strong> — 특정 레벨을 완료한 후 레벨이 끝날 때 표시되는 전체 화면 광고입니다. 플레이
+  도중에는 광고가 나오지 않습니다.</li>
+</ul>
+
+<h3>광고를 위해 처리되는 데이터</h3>
+<p>광고 제공, 반복 노출 제한, 부정 행위 방지, 성과 측정을 위해 Google은 다음 데이터를 처리할 수 있습니다.</p>
+<ul>
+  <li><strong>광고 식별자</strong> — Android의 광고 ID(AAID) 또는 iOS의 광고 식별자(IDFA). 재설정할 수 있는
+  번호이며 이름과 연결되어 있지 않습니다.</li>
+  <li>IP 주소 및 이를 바탕으로 추정한 <strong>대략적인 위치</strong>(국가/도시 수준이며 GPS 위치가 아님)</li>
+  <li>기기 모델, 운영체제 버전, 언어 및 이와 유사한 기술 정보</li>
+  <li>광고와의 상호작용(표시, 시청, 탭)</li>
+</ul>
+<p>이 데이터는 <strong>Google로 직접</strong> 전송됩니다. 저희는 이를 수집하거나 보거나 저장하지 않으며, 개인을
+식별할 수 없는 집계된 수익 보고서만 받습니다. Google의 데이터 사용 방식은
+<a href="https://policies.google.com/technologies/partner-sites?hl=ko" rel="noopener">Google 서비스를 사용하는 사이트 또는 앱의 정보를 Google이 사용하는 방법</a>
+및 <a href="https://policies.google.com/privacy?hl=ko" rel="noopener">Google 개인정보처리방침</a>을 참고하세요.</p>
+
+<h3>동의 및 선택</h3>
+<p><strong>유럽 경제 지역, 영국, 스위스</strong>의 사용자에게는 게임을 처음 열 때 동의 화면이 표시되며, 맞춤형
+광고에 동의하는지 묻습니다. 이 선택은 나중에 게임의 <strong>설정 &rsaquo; 개인정보 옵션</strong>에서 변경할 수
+있습니다.</p>
+<p>맞춤설정을 거부해도 광고는 계속 표시되지만, 관심분야에 따라 선택되지는 않습니다. 광고 식별자는 언제든지 기기
+설정에서 재설정하거나 삭제할 수 있습니다.</p>
+<ul>
+  <li><strong>Android:</strong> 설정 &rsaquo; Google &rsaquo; 모든 서비스 &rsaquo; 광고</li>
+  <li><strong>iOS:</strong> 설정 &rsaquo; 개인정보 보호 및 보안 &rsaquo; 추적. iOS에서는 앱이 추적 권한도
+  요청하며, 거부하면 광고가 맞춤설정되지 않습니다.</li>
+</ul>
+
+<h3>'광고 제거' 구매</h3>
+<p>상점에서 <strong>광고 제거</strong>를 구매하면 레벨이 끝날 때 표시되는 전면 광고가 사라집니다.
+<strong>보상형 광고는 계속 이용할 수 있습니다</strong>. 보상형 광고는 사용자가 원할 때만 시청하고 그 대가로
+코인을 받기 때문에, 이를 없애면 그 보상을 받을 수 없게 됩니다.</p>
+
+<h2>5. 설치 측정, 분석 및 비정상 종료 보고</h2>
+<p>게임에는 <strong>플레이 분석이나 비정상 종료 보고 기능이 없습니다</strong>. 어떤 레벨을 얼마나 오래
+플레이하는지 추적하지 않습니다. Google AdMob은 자체 광고의 성과만 측정합니다(4항 참고).</p>
+<p>어떤 광고나 스토어 페이지를 통해 설치되었는지 파악하고 광고 수익을 집계하여 측정하기 위해
+<strong>Tenjin</strong>이라는 측정 서비스를 사용합니다. Tenjin은 다음 데이터를 처리할 수 있습니다.</p>
+<ul>
+  <li><strong>광고 식별자</strong>(Android의 AAID, iOS에서는 추적 권한을 허용한 경우에만 IDFA) 및 iOS의
+  공급업체 식별자(IDFV)</li>
+  <li>IP 주소 및 이를 바탕으로 추정한 국가</li>
+  <li>기기 모델, 운영체제 버전, 언어, 시간대</li>
+  <li>설치 출처(Google Play Install Referrer / Apple SKAdNetwork) 및 앱을 연 시각</li>
+  <li>표시된 광고의 수익 값(사용자가 아닌 광고에 관한 값)</li>
+</ul>
+<p>이름, 이메일, GPS 위치, 게임 내 행동은 Tenjin으로 <strong>전송되지 않습니다</strong>. 유럽 경제 지역, 영국,
+스위스에서 동의 화면에서 기기에 정보를 저장하는 것을 허용하지 않으면 <strong>Tenjin으로 어떤 데이터도 전송되지
+않습니다</strong>. Tenjin 개인정보처리방침: <a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. 제3자와의 공유</h2>
+<p>저희는 사용자의 데이터를 판매하거나 대여하지 않습니다. 게임과 관련하여 데이터를 처리하는 제3자는 다음과 같습니다.</p>
+<ul>
+  <li><strong>Google(AdMob)</strong> — 광고 제공, 4항에 기재된 데이터</li>
+  <li><strong>Google Play / Apple App Store</strong> — 구매 및 결제</li>
+  <li><strong>Unity Technologies</strong> — 구매 인프라</li>
+  <li><strong>Tenjin</strong> — 설치 출처 및 광고 수익 측정, 5항에 기재된 데이터</li>
+</ul>
+
+<h2>7. 아동</h2>
+<p>이 게임은 아동을 대상으로 하지 않으며, <strong>13세 이상</strong>의 일반 사용자를 대상으로 합니다. 저희는 13세
+미만 사용자의 데이터를 고의로 수집하지 않으며, 아동을 대상으로 게임을 홍보하지 않습니다. 자녀가 게임을 이용하고
+있어 데이터 처리가 우려된다면 아래 주소로 연락해 주세요.</p>
+
+<h2>8. 사용자의 권리</h2>
+<p>저희는 사용자를 식별할 수 있는 기록을 보관하지 않으므로, 저희 쪽에서 삭제, 정정 또는 내보낼 데이터가 없습니다.
+기기에 저장된 진행 상황을 지우려면 앱을 삭제하기만 하면 됩니다. 광고 데이터에 관한 권리는 개인정보 처리자인
+<a href="https://policies.google.com/privacy?hl=ko" rel="noopener">Google</a>에 행사할 수 있으며, 광고 식별자는
+위에 설명한 대로 재설정할 수 있습니다.</p>
+
+<h2>9. 변경</h2>
+<p>이 방침이 변경되면 페이지 상단의 날짜가 업데이트됩니다. 중요한 변경 사항은 게임 내에서도 공지합니다.</p>
+
+<h2>10. 문의</h2>
+<p>문의: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">이 문서는 영어 원문을 번역한 것입니다. 두 버전의 내용이 다를 경우 영어 버전이 우선합니다.</p>
+</article>
+
+<article data-lang="zh-Hans" lang="zh-Hans" hidden>
+<h1>Captain Match — 隐私政策</h1>
+<p class="sub">最后更新：2026年9月22日</p>
+
+<p>Captain Match 是由 <strong>Mehmet Ucar</strong> 开发的一款手机益智游戏。本页面说明游戏会处理哪些数据。简而言之：<strong>游戏不会要求你提供姓名或电子邮件等个人信息，无需注册账号，也绝不会将你的游戏进度发送到我们的服务器。</strong>由于游戏免费，因此会展示广告；投放这些广告的 <strong>Google</strong> 会为此处理你设备的广告标识符和某些技术数据。详见第 4 节。</p>
+
+<h2>1. 我们收集的个人数据</h2>
+<p><strong>作为开发者，我们不会收集你的任何个人数据。</strong>游戏不会要求你提供姓名、电子邮件、电话号码、精确位置、通讯录或任何类似的个人数据。游戏无需注册或登录，我们也不会在自己的任何服务器上保存用户资料。</p>
+<p>唯一的例外是广告：我们的广告服务商 Google 会<strong>直接</strong>处理下文所述的数据以投放广告。这些数据不会传给我们。</p>
+
+<h2>2. 存储在你设备上的数据</h2>
+<p>你的游戏进度（已完成的关卡、金币、道具数量和设置）以文件形式<strong>仅保存在你自己的设备上</strong>，不会发送给我们或任何第三方。删除应用后，这些数据也会随之删除。</p>
+
+<h2>3. 购买</h2>
+<p>应用内购买完全通过 <strong>Google Play</strong>（Android）和 <strong>Apple App Store</strong>（iOS）进行。你的付款信息绝不会到达我们这里；我们既看不到，也不会存储。</p>
+<p>购买完成后，我们会在你的设备上保存商店发放的<strong>交易标识符</strong>，其唯一目的是防止同一笔购买被重复发放。它不属于个人数据，也绝不会离开你的设备。</p>
+<p>购买功能通过 <strong>Unity Technologies</strong> 的“Unity In-App Purchasing”服务实现，该服务可能会处理技术数据和设备数据，以便与商店通信。请参阅 <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity 隐私政策</a>。<a href="https://policies.google.com/privacy?hl=zh-CN" rel="noopener">Google 隐私权政策</a>和 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 隐私政策</a>同样适用。</p>
+
+<h2>4. 广告</h2>
+<p>为了让游戏保持免费，游戏会通过 <strong>Google AdMob</strong> 展示广告。广告分为两种：</p>
+<ul>
+  <li><strong>激励广告</strong> — 仅在你主动选择观看时才会展示（例如“看广告领取战利品 x2”或商店中的“免费金币”）。不看也不会有任何损失。</li>
+  <li><strong>插页式广告</strong> — 在完成某些关卡后、于关卡结束时展示的全屏广告。游戏过程中绝不会插入广告。</li>
+</ul>
+
+<h3>为广告处理的数据</h3>
+<p>为了投放广告、限制重复展示、防范欺诈和衡量效果，Google 可能会处理：</p>
+<ul>
+  <li>你的<strong>广告标识符</strong> — Android 上的广告 ID（AAID）或 iOS 上的广告标识符（IDFA）。这是一个可以重置的编号，与你的姓名无关。</li>
+  <li>你的 IP 地址以及据此推断出的<strong>大致位置</strong>（国家/城市级别，而非 GPS 位置）</li>
+  <li>设备型号、操作系统版本、语言及类似的技术信息</li>
+  <li>你与广告的互动（展示、观看、点击）</li>
+</ul>
+<p>这些数据<strong>直接发送给 Google</strong>。我们不会收集、查看或存储这些数据；我们只会收到汇总的、不涉及个人的收入报告。如需了解 Google 如何使用这些数据，请参阅<a href="https://policies.google.com/technologies/partner-sites?hl=zh-CN" rel="noopener">Google 如何使用来自使用其服务的网站或应用的信息</a>以及<a href="https://policies.google.com/privacy?hl=zh-CN" rel="noopener">Google 隐私权政策</a>。</p>
+
+<h3>你的同意和选择</h3>
+<p><strong>欧洲经济区、英国和瑞士</strong>的用户首次打开游戏时，会看到一个同意界面，询问是否接受个性化广告。你之后可以在游戏的<strong>设置 &rsaquo; 隐私选项</strong>中更改这一选择。</p>
+<p>如果你拒绝个性化，广告仍会展示，但不会根据你的兴趣来选择。你可以随时在设备设置中重置或删除广告标识符：</p>
+<ul>
+  <li><strong>Android：</strong>设置 &rsaquo; Google &rsaquo; 所有服务 &rsaquo; 广告</li>
+  <li><strong>iOS：</strong>设置 &rsaquo; 隐私与安全性 &rsaquo; 跟踪。在 iOS 上，应用还会请求跟踪权限；如果你拒绝，广告将不会个性化。</li>
+</ul>
+
+<h3>“去广告”购买</h3>
+<p>在商店购买<strong>去广告</strong>后，关卡结束时的插页式广告将不再展示。<strong>激励广告仍然可用</strong> — 你只会在自愿时观看它们，并能借此赚取金币；如果移除，你就会失去这份奖励。</p>
+
+<h2>5. 安装衡量、分析和崩溃报告</h2>
+<p>游戏<strong>没有游戏行为分析，也没有崩溃报告</strong>：我们不会追踪你玩了哪些关卡或玩了多久。Google AdMob 只衡量其自身广告的效果（见第 4 节）。</p>
+<p>为了了解安装来自哪个广告或商店页面，并汇总衡量广告收入，我们使用一项名为 <strong>Tenjin</strong> 的衡量服务。Tenjin 可能会处理：</p>
+<ul>
+  <li>你的<strong>广告标识符</strong>（Android 上的 AAID；在 iOS 上，仅当你授予跟踪权限时才包括 IDFA），以及 iOS 上的供应商标识符（IDFV）</li>
+  <li>你的 IP 地址以及据此推断出的国家/地区</li>
+  <li>设备型号、操作系统版本、语言和时区</li>
+  <li>安装来源（Google Play Install Referrer / Apple SKAdNetwork）以及应用的打开时间</li>
+  <li>所展示广告的收入金额（这是广告的属性，与你个人无关）</li>
+</ul>
+<p>你的姓名、电子邮件、GPS 位置和游戏内行为<strong>不会</strong>发送给 Tenjin。在欧洲经济区、英国和瑞士，如果你在同意界面中不允许在设备上存储信息，<strong>则不会向 Tenjin 发送任何数据</strong>。Tenjin 隐私政策：<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. 与第三方共享</h2>
+<p>我们不会出售或出租你的数据。与游戏相关、会处理数据的第三方如下：</p>
+<ul>
+  <li><strong>Google（AdMob）</strong> — 广告投放；第 4 节所列的数据</li>
+  <li><strong>Google Play / Apple App Store</strong> — 购买和付款</li>
+  <li><strong>Unity Technologies</strong> — 购买基础设施</li>
+  <li><strong>Tenjin</strong> — 安装来源和广告收入衡量；第 5 节所列的数据</li>
+</ul>
+
+<h2>7. 儿童</h2>
+<p>本游戏并非面向儿童，而是面向 <strong>13 岁及以上</strong>的普通用户。我们不会有意收集 13 岁以下用户的数据，也不会向儿童推广本游戏。如果你认为你的孩子正在使用本游戏，并对数据处理有所顾虑，请通过下方地址联系我们。</p>
+
+<h2>8. 你的权利</h2>
+<p>由于我们不保存任何可识别你身份的记录，因此我们这边没有需要删除、更正或导出的数据。如需删除本地进度，只需卸载应用即可。对于广告数据，你可以向作为数据控制者的 <a href="https://policies.google.com/privacy?hl=zh-CN" rel="noopener">Google</a> 行使你的权利，也可以按上文所述重置你的广告标识符。</p>
+
+<h2>9. 变更</h2>
+<p>如果本政策发生变更，页面顶部的日期将随之更新。重大变更也会在游戏内公布。</p>
+
+<h2>10. 联系方式</h2>
+<p>如有疑问：<a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">本文译自英文原文。如两个版本之间存在任何差异，以英文版本为准。</p>
+</article>
+
+<article data-lang="zh-Hant" lang="zh-Hant" hidden>
+<h1>Captain Match — 隱私權政策</h1>
+<p class="sub">最後更新：2026年9月22日</p>
+
+<p>Captain Match 是由 <strong>Mehmet Ucar</strong> 開發的手機益智遊戲。本頁說明遊戲會處理哪些資料。簡而言之：<strong>遊戲不會要求你提供姓名或電子郵件等個人資訊，不需要帳戶，也絕不會將你的遊戲進度傳送到我們的伺服器。</strong>由於遊戲免費，因此會顯示廣告；放送這些廣告的 <strong>Google</strong> 會為此處理你裝置的廣告識別碼和部分技術資料。詳見第 4 節。</p>
+
+<h2>1. 我們收集的個人資料</h2>
+<p><strong>身為開發者，我們不會向你收集任何個人資料。</strong>遊戲不會要求你提供姓名、電子郵件、電話號碼、精確位置、聯絡人或任何類似的個人資料。遊戲不需要註冊或登入，我們也不會在自己的任何伺服器上保存使用者檔案。</p>
+<p>唯一的例外是廣告：我們的廣告供應商 Google 會<strong>直接</strong>處理下文所述的資料以放送廣告。這些資料不會傳給我們。</p>
+
+<h2>2. 儲存在你裝置上的資料</h2>
+<p>你的遊戲進度（已完成的關卡、金幣、道具數量和設定）以檔案形式<strong>僅儲存在你自己的裝置上</strong>，不會傳送給我們或任何第三方。刪除應用程式後，這些資料也會一併刪除。</p>
+
+<h2>3. 購買</h2>
+<p>應用程式內購買完全透過 <strong>Google Play</strong>（Android）和 <strong>Apple App Store</strong>（iOS）處理。你的付款資訊絕不會送到我們這裡；我們既看不到，也不會儲存。</p>
+<p>購買完成後，我們會在你的裝置上儲存商店核發的<strong>交易識別碼</strong>，其唯一目的是防止同一筆購買被重複發放。它不屬於個人資料，也絕不會離開你的裝置。</p>
+<p>購買功能透過 <strong>Unity Technologies</strong> 的「Unity In-App Purchasing」服務實作，該服務可能會處理技術資料和裝置資料，以便與商店通訊。請參閱 <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity 隱私權政策</a>。<a href="https://policies.google.com/privacy?hl=zh-TW" rel="noopener">Google 隱私權政策</a>和 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 隱私權政策</a>也同樣適用。</p>
+
+<h2>4. 廣告</h2>
+<p>為了讓遊戲維持免費，遊戲會透過 <strong>Google AdMob</strong> 顯示廣告。廣告分為兩種：</p>
+<ul>
+  <li><strong>獎勵廣告</strong> — 只有在你主動選擇觀看時才會顯示（例如「看廣告領取戰利品 x2」或商店中的「免費金幣」）。不看也不會有任何損失。</li>
+  <li><strong>插頁式廣告</strong> — 在完成特定關卡後、於關卡結束時顯示的全螢幕廣告。遊戲進行中絕不會插入廣告。</li>
+</ul>
+
+<h3>為廣告處理的資料</h3>
+<p>為了放送廣告、限制重複曝光、防範詐騙及評估成效，Google 可能會處理：</p>
+<ul>
+  <li>你的<strong>廣告識別碼</strong> — Android 上的廣告 ID（AAID）或 iOS 上的廣告識別碼（IDFA）。這是可以重設的號碼，與你的姓名無關。</li>
+  <li>你的 IP 位址以及據此推斷出的<strong>大概位置</strong>（國家/城市層級，而非 GPS 位置）</li>
+  <li>裝置型號、作業系統版本、語言及類似的技術資訊</li>
+  <li>你與廣告的互動（顯示、觀看、點擊）</li>
+</ul>
+<p>這些資料會<strong>直接傳送給 Google</strong>。我們不會收集、查看或儲存這些資料；我們只會收到彙整後、不涉及個人的收益報告。如要瞭解 Google 如何使用這些資料，請參閱<a href="https://policies.google.com/technologies/partner-sites?hl=zh-TW" rel="noopener">Google 如何使用來自採用其服務之網站或應用程式的資訊</a>以及<a href="https://policies.google.com/privacy?hl=zh-TW" rel="noopener">Google 隱私權政策</a>。</p>
+
+<h3>你的同意和選擇</h3>
+<p><strong>歐洲經濟區、英國和瑞士</strong>的使用者首次開啟遊戲時，會看到同意畫面，詢問是否接受個人化廣告。你之後可以在遊戲的<strong>設定 &rsaquo; 隱私選項</strong>中變更這項選擇。</p>
+<p>如果你拒絕個人化，廣告仍會顯示，但不會根據你的興趣挑選。你可以隨時在裝置設定中重設或刪除廣告識別碼：</p>
+<ul>
+  <li><strong>Android：</strong>設定 &rsaquo; Google &rsaquo; 所有服務 &rsaquo; 廣告</li>
+  <li><strong>iOS：</strong>設定 &rsaquo; 隱私權與安全性 &rsaquo; 追蹤。在 iOS 上，應用程式還會要求追蹤權限；如果你拒絕，廣告將不會個人化。</li>
+</ul>
+
+<h3>「移除廣告」購買項目</h3>
+<p>在商店購買<strong>移除廣告</strong>後，關卡結束時的插頁式廣告將不再顯示。<strong>獎勵廣告仍可使用</strong> — 你只會在自願時觀看，並能藉此賺取金幣；若將其移除，你就會失去這份獎勵。</p>
+
+<h2>5. 安裝評估、分析和當機報告</h2>
+<p>遊戲<strong>沒有遊戲行為分析，也沒有當機報告</strong>：我們不會追蹤你玩了哪些關卡或玩了多久。Google AdMob 只評估其自身廣告的成效（見第 4 節）。</p>
+<p>為了瞭解安裝來自哪個廣告或商店頁面，並彙整評估廣告收益，我們使用名為 <strong>Tenjin</strong> 的評估服務。Tenjin 可能會處理：</p>
+<ul>
+  <li>你的<strong>廣告識別碼</strong>（Android 上的 AAID；在 iOS 上，僅在你授予追蹤權限時才包含 IDFA），以及 iOS 上的供應商識別碼（IDFV）</li>
+  <li>你的 IP 位址以及據此推斷出的國家/地區</li>
+  <li>裝置型號、作業系統版本、語言和時區</li>
+  <li>安裝來源（Google Play Install Referrer / Apple SKAdNetwork）以及應用程式的開啟時間</li>
+  <li>所顯示廣告的收益金額（這是廣告的屬性，與你個人無關）</li>
+</ul>
+<p>你的姓名、電子郵件、GPS 位置和遊戲內行為<strong>不會</strong>傳送給 Tenjin。在歐洲經濟區、英國和瑞士，如果你在同意畫面中不允許在裝置上儲存資訊，<strong>就不會向 Tenjin 傳送任何資料</strong>。Tenjin 隱私權政策：<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. 與第三方分享</h2>
+<p>我們不會出售或出租你的資料。與遊戲相關、會處理資料的第三方如下：</p>
+<ul>
+  <li><strong>Google（AdMob）</strong> — 廣告放送；第 4 節所列的資料</li>
+  <li><strong>Google Play / Apple App Store</strong> — 購買和付款</li>
+  <li><strong>Unity Technologies</strong> — 購買基礎架構</li>
+  <li><strong>Tenjin</strong> — 安裝來源和廣告收益評估；第 5 節所列的資料</li>
+</ul>
+
+<h2>7. 兒童</h2>
+<p>本遊戲並非以兒童為對象，而是以 <strong>13 歲以上</strong>的一般使用者為對象。我們不會在知情的情況下收集未滿 13 歲使用者的資料，也不會向兒童宣傳本遊戲。如果你認為你的孩子正在使用本遊戲，並對資料處理有所疑慮，請透過下方地址與我們聯絡。</p>
+
+<h2>8. 你的權利</h2>
+<p>由於我們不保存任何可識別你身分的記錄，因此我們這邊沒有需要刪除、更正或匯出的資料。如要刪除本機進度，只要解除安裝應用程式即可。對於廣告資料，你可以向身為資料控管者的 <a href="https://policies.google.com/privacy?hl=zh-TW" rel="noopener">Google</a> 行使你的權利，也可以按上文所述重設你的廣告識別碼。</p>
+
+<h2>9. 變更</h2>
+<p>如果本政策有所變更，頁面頂端的日期將隨之更新。重大變更也會在遊戲內公告。</p>
+
+<h2>10. 聯絡方式</h2>
+<p>如有疑問：<a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">本文譯自英文原文。如兩個版本之間有任何差異，以英文版本為準。</p>
+</article>
+
+<article data-lang="id" lang="id" hidden>
+<h1>Captain Match — Kebijakan Privasi</h1>
+<p class="sub">Terakhir diperbarui: 22 September 2026</p>
+
+<p>Captain Match adalah game puzzle seluler yang dikembangkan oleh <strong>Mehmet Ucar</strong>. Halaman ini
+menjelaskan data apa saja yang diproses oleh game. Singkatnya: <strong>game ini tidak meminta data pribadi
+seperti nama atau email Anda, tidak memerlukan akun, dan tidak pernah mengirimkan progres Anda ke server
+kami.</strong> Karena game ini gratis, game ini menampilkan iklan; <strong>Google</strong>, yang menayangkan
+iklan tersebut, memproses ID iklan perangkat Anda dan data teknis tertentu untuk keperluan itu. Lihat bagian 4.</p>
+
+<h2>1. Data pribadi yang kami kumpulkan</h2>
+<p><strong>Sebagai pengembang, kami tidak mengumpulkan data pribadi apa pun dari Anda.</strong> Game ini
+tidak meminta nama, email, nomor telepon, lokasi akurat, kontak, atau data pribadi serupa lainnya. Tidak ada
+pendaftaran dan tidak ada login, dan kami tidak menyimpan profil pengguna di server mana pun milik kami.</p>
+<p>Satu-satunya pengecualian adalah iklan: penyedia iklan kami, Google, memproses data yang dijelaskan di
+bawah ini <strong>secara langsung</strong> untuk menayangkan iklan. Data tersebut tidak diteruskan kepada kami.</p>
+
+<h2>2. Data yang disimpan di perangkat Anda</h2>
+<p>Progres game Anda (level yang telah diselesaikan, koin, jumlah booster, dan pengaturan) disimpan dalam
+sebuah file <strong>hanya di perangkat Anda sendiri</strong>. Data ini tidak dikirimkan kepada kami atau pihak
+ketiga mana pun. Jika Anda menghapus aplikasi, data ini juga akan terhapus.</p>
+
+<h2>3. Pembelian</h2>
+<p>Pembelian dalam aplikasi sepenuhnya ditangani oleh <strong>Google Play</strong> (Android) dan
+<strong>Apple App Store</strong> (iOS). Detail pembayaran Anda tidak pernah sampai kepada kami; kami tidak
+melihat maupun menyimpannya.</p>
+<p>Setelah pembelian selesai, kami menyimpan <strong>ID transaksi</strong> yang dikeluarkan oleh toko di
+perangkat Anda. Satu-satunya tujuannya adalah mencegah pembelian yang sama dikirimkan dua kali. ID ini bukan
+data pribadi dan tidak pernah keluar dari perangkat.</p>
+<p>Fitur pembelian diimplementasikan dengan layanan "Unity In-App Purchasing" dari <strong>Unity
+Technologies</strong>, yang dapat memproses data teknis dan data perangkat untuk berkomunikasi dengan toko.
+Lihat <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Kebijakan Privasi Unity</a>.
+<a href="https://policies.google.com/privacy?hl=id" rel="noopener">Kebijakan Privasi Google</a> dan
+<a href="https://www.apple.com/legal/privacy/" rel="noopener">Kebijakan Privasi Apple</a> juga berlaku.</p>
+
+<h2>4. Iklan</h2>
+<p>Agar tetap gratis, game ini menampilkan iklan melalui <strong>Google AdMob</strong>. Ada dua jenis iklan:</p>
+<ul>
+  <li><strong>Iklan reward</strong> — hanya ditampilkan jika Anda memilih untuk menontonnya (misalnya
+  "Tonton iklan untuk jarahan x2" atau "Koin Gratis" di toko). Jika Anda melewatinya, Anda tidak kehilangan
+  apa pun.</li>
+  <li><strong>Iklan interstisial</strong> — iklan layar penuh yang ditampilkan di akhir level tertentu setelah
+  Anda menyelesaikannya. Tidak ada iklan yang mengganggu saat Anda sedang bermain.</li>
+</ul>
+
+<h3>Data yang diproses untuk iklan</h3>
+<p>Untuk menayangkan iklan, membatasi pengulangan, melindungi dari penipuan, dan mengukur performa, Google
+dapat memproses:</p>
+<ul>
+  <li><strong>ID iklan</strong> Anda — ID Iklan (AAID) di Android atau Advertising Identifier (IDFA) di iOS.
+  Ini adalah nomor yang dapat direset dan tidak terkait dengan nama Anda.</li>
+  <li>Alamat IP Anda dan <strong>perkiraan lokasi</strong> yang diperoleh darinya (tingkat negara/kota, bukan
+  lokasi GPS)</li>
+  <li>Model perangkat, versi sistem operasi, bahasa, dan informasi teknis serupa</li>
+  <li>Interaksi Anda dengan iklan (ditampilkan, ditonton, diketuk)</li>
+</ul>
+<p>Data ini dikirim <strong>langsung ke Google</strong>. Kami tidak mengumpulkan, melihat, atau menyimpannya;
+kami hanya menerima laporan pendapatan gabungan yang tidak bersifat pribadi. Untuk mengetahui cara Google
+menggunakan data ini, lihat
+<a href="https://policies.google.com/technologies/partner-sites?hl=id" rel="noopener">Cara Google menggunakan informasi dari situs atau aplikasi yang menggunakan layanan Google</a>
+dan <a href="https://policies.google.com/privacy?hl=id" rel="noopener">Kebijakan Privasi Google</a>.</p>
+
+<h3>Persetujuan dan pilihan Anda</h3>
+<p>Pengguna di <strong>Wilayah Ekonomi Eropa, Inggris Raya, dan Swiss</strong> akan melihat layar persetujuan
+saat pertama kali membuka game, yang menanyakan apakah mereka menerima iklan yang dipersonalisasi. Anda dapat
+mengubah pilihan tersebut nanti di dalam game melalui <strong>Pengaturan &rsaquo; Opsi Privasi</strong>.</p>
+<p>Jika Anda menolak personalisasi, iklan tetap ditampilkan, tetapi tidak dipilih berdasarkan minat Anda.
+Anda dapat mereset atau menghapus ID iklan kapan saja di setelan perangkat:</p>
+<ul>
+  <li><strong>Android:</strong> Setelan &rsaquo; Google &rsaquo; Semua layanan &rsaquo; Iklan</li>
+  <li><strong>iOS:</strong> Pengaturan &rsaquo; Privasi &amp; Keamanan &rsaquo; Pelacakan. Di iOS, aplikasi juga
+  meminta izin pelacakan; jika Anda menolaknya, iklan tidak dipersonalisasi.</li>
+</ul>
+
+<h3>Pembelian "Tanpa Iklan"</h3>
+<p>Dengan membeli <strong>Tanpa Iklan</strong> di toko, iklan interstisial yang muncul di akhir level akan
+dihapus. <strong>Iklan reward tetap tersedia</strong> — Anda hanya menontonnya jika mau dan iklan itu memberi
+Anda koin, jadi menghapusnya justru akan menghilangkan hadiah tersebut.</p>
+
+<h2>5. Pengukuran instalasi, analitik, dan laporan error</h2>
+<p>Game ini <strong>tidak memiliki analitik permainan maupun laporan error</strong>: kami tidak melacak level
+mana yang Anda mainkan atau berapa lama. Google AdMob hanya mengukur performa iklannya sendiri (lihat bagian 4).</p>
+<p>Untuk memahami iklan atau halaman toko mana yang menghasilkan sebuah instalasi, serta untuk mengukur
+pendapatan iklan secara gabungan, kami menggunakan layanan pengukuran bernama <strong>Tenjin</strong>. Tenjin
+dapat memproses:</p>
+<ul>
+  <li><strong>ID iklan</strong> Anda (AAID di Android; IDFA di iOS hanya jika Anda memberikan izin pelacakan)
+  dan, di iOS, ID untuk vendor (IDFV)</li>
+  <li>Alamat IP Anda dan negara yang diperoleh darinya</li>
+  <li>Model perangkat, versi sistem operasi, bahasa, dan zona waktu</li>
+  <li>Sumber instalasi (Google Play Install Referrer / Apple SKAdNetwork) dan waktu aplikasi dibuka</li>
+  <li>Nilai pendapatan dari iklan yang ditampilkan (properti iklan, bukan properti Anda)</li>
+</ul>
+<p>Nama, email, lokasi GPS, dan perilaku Anda di dalam game <strong>tidak</strong> dikirim ke Tenjin. Di
+Wilayah Ekonomi Eropa, Inggris Raya, dan Swiss, jika Anda tidak mengizinkan penyimpanan informasi di perangkat
+pada layar persetujuan, <strong>tidak ada data sama sekali yang dikirim ke Tenjin</strong>. Kebijakan privasi
+Tenjin: <a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. Berbagi dengan pihak ketiga</h2>
+<p>Kami tidak menjual atau menyewakan data Anda. Pihak ketiga yang memproses data sehubungan dengan game ini adalah:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — penayangan iklan; data yang tercantum di bagian 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — pembelian dan pembayaran</li>
+  <li><strong>Unity Technologies</strong> — infrastruktur pembelian</li>
+  <li><strong>Tenjin</strong> — pengukuran sumber instalasi dan pendapatan iklan; data yang tercantum di bagian 5</li>
+</ul>
+
+<h2>7. Anak-anak</h2>
+<p>Game ini tidak ditujukan untuk anak-anak, melainkan untuk khalayak umum berusia <strong>13 tahun ke
+atas</strong>. Kami tidak dengan sengaja mengumpulkan data dari pengguna di bawah 13 tahun dan tidak
+memasarkan game ini kepada anak-anak. Jika Anda yakin anak Anda menggunakan game ini dan khawatir tentang
+pemrosesan data, hubungi kami melalui alamat di bawah.</p>
+
+<h2>8. Hak Anda</h2>
+<p>Karena kami tidak menyimpan catatan apa pun yang dapat mengidentifikasi Anda, tidak ada data di pihak kami
+yang perlu dihapus, diperbaiki, atau diekspor. Untuk menghapus progres lokal Anda, cukup uninstal aplikasi.
+Untuk data iklan, Anda dapat menggunakan hak Anda terhadap
+<a href="https://policies.google.com/privacy?hl=id" rel="noopener">Google</a> sebagai pengendali data, dan Anda
+dapat mereset ID iklan seperti yang dijelaskan di atas.</p>
+
+<h2>9. Perubahan</h2>
+<p>Jika kebijakan ini berubah, tanggal di bagian atas halaman akan diperbarui. Perubahan penting juga akan
+diumumkan di dalam game.</p>
+
+<h2>10. Kontak</h2>
+<p>Pertanyaan: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">Teks ini diterjemahkan dari versi asli dalam bahasa Inggris. Jika terdapat perbedaan antara kedua versi, versi bahasa Inggris yang berlaku.</p>
+</article>
+
+<article data-lang="ar" lang="ar" dir="rtl" hidden>
+<h1>Captain Match — سياسة الخصوصية</h1>
+<p class="sub">آخر تحديث: 22 سبتمبر 2026</p>
+
+<p>Captain Match هي لعبة ألغاز للهواتف المحمولة من تطوير <strong>Mehmet Ucar</strong>. توضح هذه الصفحة
+البيانات التي تعالجها اللعبة. باختصار: <strong>لا تطلب اللعبة منك بيانات شخصية مثل اسمك أو بريدك
+الإلكتروني، ولا تتطلب إنشاء حساب، ولا ترسل تقدّمك في اللعب إلى خوادمنا أبدًا.</strong> ولأن اللعبة
+مجانية، فإنها تعرض إعلانات؛ وتعالج <strong>Google</strong>، التي تقدّم هذه الإعلانات، معرّف الإعلانات الخاص
+بجهازك وبعض البيانات التقنية لهذا الغرض. راجع القسم 4.</p>
+
+<h2>1. البيانات الشخصية التي نجمعها</h2>
+<p><strong>بصفتنا المطوّر، لا نجمع منك أي بيانات شخصية.</strong> لا تطلب اللعبة اسمك أو بريدك الإلكتروني أو
+رقم هاتفك أو موقعك الدقيق أو جهات اتصالك أو أي بيانات شخصية مماثلة. لا يوجد إنشاء حساب ولا تسجيل دخول، ولا
+نحتفظ بأي ملف تعريف للمستخدم على أي خادم تابع لنا.</p>
+<p>الاستثناء الوحيد هو الإعلانات: إذ يعالج مزوّد الإعلانات لدينا، Google، البيانات الموضّحة أدناه
+<strong>مباشرةً</strong> لعرض الإعلانات. ولا تُنقل هذه البيانات إلينا.</p>
+
+<h2>2. البيانات المخزّنة على جهازك</h2>
+<p>يُحفظ تقدّمك في اللعبة (المستويات المكتملة والعملات وعدد المعززات والإعدادات) في ملف <strong>على جهازك
+فقط</strong>. ولا يُرسل إلينا أو إلى أي طرف ثالث. وعند حذف التطبيق تُحذف هذه البيانات أيضًا.</p>
+
+<h2>3. عمليات الشراء</h2>
+<p>تتم عمليات الشراء داخل التطبيق بالكامل عبر <strong>Google Play</strong> (Android) و<strong>Apple App
+Store</strong> (iOS). لا تصل إلينا بيانات الدفع الخاصة بك أبدًا؛ فنحن لا نراها ولا نخزّنها.</p>
+<p>عند إتمام عملية شراء، نخزّن على جهازك <strong>معرّف المعاملة</strong> الذي يصدره المتجر. والغرض الوحيد منه
+هو منع تسليم عملية الشراء نفسها مرتين. وهو ليس بيانات شخصية ولا يغادر الجهاز أبدًا.</p>
+<p>تعتمد عمليات الشراء على خدمة "Unity In-App Purchasing" من <strong>Unity Technologies</strong>، والتي قد
+تعالج بيانات تقنية وبيانات الجهاز للتواصل مع المتاجر. راجع
+<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">سياسة خصوصية Unity</a>.
+كما تنطبق <a href="https://policies.google.com/privacy?hl=ar" rel="noopener">سياسة خصوصية Google</a>
+و<a href="https://www.apple.com/legal/privacy/" rel="noopener">سياسة خصوصية Apple</a>.</p>
+
+<h2>4. الإعلانات</h2>
+<p>لكي تبقى اللعبة مجانية، تعرض إعلانات من خلال <strong>Google AdMob</strong>. وهناك نوعان:</p>
+<ul>
+  <li><strong>إعلانات بمكافأة</strong> — لا تظهر إلا عندما تختار مشاهدة أحدها (مثل "شاهد إعلانًا لتحصل على
+  غنيمة ×2" أو "عملات مجانية" في المتجر). ولن تخسر شيئًا إذا تخطيتها.</li>
+  <li><strong>إعلانات بينية</strong> — إعلانات بملء الشاشة تظهر في نهاية بعض المستويات بعد إكمالها. ولا يقطع
+  أي إعلان اللعب أبدًا.</li>
+</ul>
+
+<h3>البيانات التي تتم معالجتها لأغراض الإعلانات</h3>
+<p>لعرض الإعلانات والحد من تكرارها والحماية من الاحتيال وقياس أدائها، قد تعالج Google ما يلي:</p>
+<ul>
+  <li><strong>معرّف الإعلانات</strong> الخاص بك — معرّف الإعلانات (AAID) على Android أو معرّف المعلنين (IDFA)
+  على iOS. وهو رقم يمكن إعادة ضبطه وغير مرتبط باسمك.</li>
+  <li>عنوان IP الخاص بك و<strong>الموقع التقريبي</strong> المستنتج منه (على مستوى البلد/المدينة، وليس موقع GPS)</li>
+  <li>طراز الجهاز وإصدار نظام التشغيل واللغة ومعلومات تقنية مماثلة</li>
+  <li>تفاعلك مع الإعلان (عُرض، شوهد، نُقر عليه)</li>
+</ul>
+<p>تُرسل هذه البيانات <strong>مباشرةً إلى Google</strong>. نحن لا نجمعها ولا نراها ولا نخزّنها؛ ولا نتلقى
+إلا تقارير إيرادات مجمّعة وغير شخصية. لمعرفة كيفية استخدام Google لهذه البيانات، راجع
+<a href="https://policies.google.com/technologies/partner-sites?hl=ar" rel="noopener">كيفية استخدام Google للمعلومات الواردة من المواقع أو التطبيقات التي تستخدم خدماتها</a>
+و<a href="https://policies.google.com/privacy?hl=ar" rel="noopener">سياسة خصوصية Google</a>.</p>
+
+<h3>موافقتك وخياراتك</h3>
+<p>يظهر للمستخدمين في <strong>المنطقة الاقتصادية الأوروبية والمملكة المتحدة وسويسرا</strong> شاشة موافقة عند
+فتح اللعبة لأول مرة، تسألهم عمّا إذا كانوا يقبلون الإعلانات المخصّصة. ويمكنك تغيير هذا الاختيار لاحقًا داخل
+اللعبة من <strong>الإعدادات &rsaquo; خيارات الخصوصية</strong>.</p>
+<p>إذا رفضت التخصيص، فستستمر الإعلانات في الظهور، لكنها لن تُختار وفقًا لاهتماماتك. ويمكنك إعادة ضبط معرّف
+الإعلانات أو حذفه في أي وقت من إعدادات جهازك:</p>
+<ul>
+  <li><strong>Android:</strong> الإعدادات &rsaquo; Google &rsaquo; جميع الخدمات &rsaquo; الإعلانات</li>
+  <li><strong>iOS:</strong> الإعدادات &rsaquo; الخصوصية والأمان &rsaquo; التتبع. على iOS، يطلب التطبيق أيضًا
+  إذن التتبع؛ وإذا رفضته، فلن تكون الإعلانات مخصّصة.</li>
+</ul>
+
+<h3>شراء "بلا إعلانات"</h3>
+<p>عند شراء <strong>بلا إعلانات</strong> من المتجر، تُزال الإعلانات البينية التي تظهر في نهاية المستويات.
+<strong>تبقى الإعلانات بمكافأة متاحة</strong> — فأنت لا تشاهدها إلا باختيارك وتكسب بها عملات، لذا فإن
+إزالتها ستحرمك من هذه المكافأة.</p>
+
+<h2>5. قياس عمليات التثبيت والتحليلات وتقارير الأعطال</h2>
+<p>لا تحتوي اللعبة على <strong>أي تحليلات للعب ولا تقارير أعطال</strong>: فنحن لا نتتبع المستويات التي تلعبها
+ولا مدة لعبك. ولا تقيس Google AdMob إلا أداء إعلاناتها (راجع القسم 4).</p>
+<p>لمعرفة الإعلان أو صفحة المتجر التي جاء منها التثبيت، ولقياس إيرادات الإعلانات بشكل مجمّع، نستخدم خدمة
+قياس تُسمى <strong>Tenjin</strong>. وقد تعالج Tenjin ما يلي:</p>
+<ul>
+  <li><strong>معرّف الإعلانات</strong> الخاص بك (AAID على Android؛ وIDFA على iOS فقط إذا منحت إذن التتبع)،
+  ومعرّف المورّد (IDFV) على iOS</li>
+  <li>عنوان IP الخاص بك والبلد المستنتج منه</li>
+  <li>طراز الجهاز وإصدار نظام التشغيل واللغة والمنطقة الزمنية</li>
+  <li>مصدر التثبيت (Google Play Install Referrer / Apple SKAdNetwork) وأوقات فتح التطبيق</li>
+  <li>قيمة إيرادات الإعلانات المعروضة (وهي خاصية للإعلان وليست لك)</li>
+</ul>
+<p><strong>لا</strong> يُرسل اسمك أو بريدك الإلكتروني أو موقعك عبر GPS أو سلوكك داخل اللعبة إلى Tenjin. وفي
+المنطقة الاقتصادية الأوروبية والمملكة المتحدة وسويسرا، إذا لم تسمح بتخزين المعلومات على جهازك في شاشة
+الموافقة، <strong>فلن تُرسل أي بيانات إلى Tenjin على الإطلاق</strong>. سياسة خصوصية Tenjin:
+<a href="https://tenjin.com/privacy/">tenjin.com/privacy</a></p>
+
+<h2>6. المشاركة مع أطراف ثالثة</h2>
+<p>نحن لا نبيع بياناتك ولا نؤجّرها. الأطراف الثالثة التي تعالج بيانات فيما يتعلق باللعبة هي:</p>
+<ul>
+  <li><strong>Google (AdMob)</strong> — عرض الإعلانات؛ البيانات المذكورة في القسم 4</li>
+  <li><strong>Google Play / Apple App Store</strong> — عمليات الشراء والدفع</li>
+  <li><strong>Unity Technologies</strong> — البنية التحتية للشراء</li>
+  <li><strong>Tenjin</strong> — قياس مصدر التثبيت وإيرادات الإعلانات؛ البيانات المذكورة في القسم 5</li>
+</ul>
+
+<h2>7. الأطفال</h2>
+<p>اللعبة ليست موجّهة للأطفال؛ فهي تستهدف جمهورًا عامًا يبلغ من العمر <strong>13 عامًا فأكثر</strong>. نحن لا
+نجمع عن علم بيانات من مستخدمين دون سن 13 عامًا، ولا نسوّق اللعبة للأطفال. إذا كنت تعتقد أن طفلك يستخدم
+اللعبة وكنت قلقًا بشأن معالجة البيانات، فتواصل معنا عبر العنوان أدناه.</p>
+
+<h2>8. حقوقك</h2>
+<p>لأننا لا نحتفظ بأي سجل يحدد هويتك، فلا يوجد لدينا ما يمكن حذفه أو تصحيحه أو تصديره. لإزالة تقدّمك المحلي،
+يكفي أن تلغي تثبيت التطبيق. أما بالنسبة لبيانات الإعلانات، فيمكنك ممارسة حقوقك لدى
+<a href="https://policies.google.com/privacy?hl=ar" rel="noopener">Google</a> بصفتها الجهة المتحكمة في البيانات،
+ويمكنك إعادة ضبط معرّف الإعلانات كما هو موضّح أعلاه.</p>
+
+<h2>9. التغييرات</h2>
+<p>إذا تغيّرت هذه السياسة، فسيتم تحديث التاريخ في أعلى الصفحة. وسيُعلن عن التغييرات المهمة داخل اللعبة أيضًا.</p>
+
+<h2>10. التواصل</h2>
+<p>للاستفسارات: <a href="mailto:mehmetuar@hotmail.com">mehmetuar@hotmail.com</a></p>
+
+<p class="xnote">هذا النص مترجم من النسخة الأصلية باللغة الإنجليزية. وفي حال وجود أي اختلاف بين النسختين، تكون النسخة الإنجليزية هي المرجع.</p>
+</article>
+
+<!-- /articles -->
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('lang-btn');
+  var menu = document.getElementById('lang-menu');
+  var flag = document.getElementById('lang-flag');
+  var nameEl = document.getElementById('lang-name');
+  var links = [].slice.call(menu.querySelectorAll('a[data-lang]'));
+  var articles = [].slice.call(document.querySelectorAll('article[data-lang]'));
+  var codes = links.map(function (a) { return a.getAttribute('data-lang'); });
+
+  // Oyundaki Lang.Match ile aynı kural: "zh-TW" → zh-Hant, "zh" → zh-Hans, "in" → id, "pt-BR" → pt
+  function match(tag) {
+    if (!tag) return null;
+    var lower = tag.toLowerCase().replace(/_/g, '-');
+    for (var i = 0; i < codes.length; i++) if (codes[i].toLowerCase() === lower) return codes[i];
+    var parts = lower.split('-'), lang = parts[0];
+    if (lang === 'zh') {
+      if (parts.indexOf('hant') > 0) return 'zh-Hant';
+      if (parts.indexOf('hans') > 0) return 'zh-Hans';
+      if (parts.indexOf('tw') > 0 || parts.indexOf('hk') > 0 || parts.indexOf('mo') > 0) return 'zh-Hant';
+      return 'zh-Hans';
+    }
+    if (lang === 'in') return 'id';
+    return codes.indexOf(lang) >= 0 ? lang : null;
+  }
+
+  function show(code) {
+    var art = articles.filter(function (a) { return a.getAttribute('data-lang') === code; })[0];
+    if (!art) return;
+    articles.forEach(function (a) { a.hidden = a !== art; });
+    var root = document.documentElement;
+    root.lang = art.getAttribute('lang');
+    root.dir = art.getAttribute('dir') || 'ltr';
+    document.title = art.querySelector('h1').textContent;
+    links.forEach(function (a) {
+      var on = a.getAttribute('data-lang') === code;
+      if (on) {
+        flag.src = 'flags/' + a.getAttribute('data-flag') + '.svg';
+        nameEl.textContent = a.textContent;
+        a.setAttribute('aria-current', 'true');
+      } else {
+        a.removeAttribute('aria-current');
+      }
+    });
+    try {
+      var url = new URL(location.href);
+      if (code === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', code);
+      history.replaceState(null, '', url);
+    } catch (e) { /* file:// vb. */ }
+  }
+
+  function setOpen(open) {
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  btn.addEventListener('click', function () { setOpen(menu.hidden); });
+  document.addEventListener('click', function (e) {
+    if (!menu.hidden && !e.target.closest('.lang')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); }
+  });
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;   // yeni sekmede aç
+      e.preventDefault();
+      show(a.getAttribute('data-lang'));
+      setOpen(false);
+      window.scrollTo(0, 0);
+    });
+  });
+
+  // Varsayılan İngilizce; oyun ?lang=<kod> ile oyuncunun dilinde açar
+  var q = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  show(match(q) || 'en');
+})();
+</script>
 </body>
 </html>
